@@ -1,0 +1,96 @@
+/* HEADER
+.header
+  position: absolute
+  top: 0
+  right: 0
+  left: 0
+  background: transparent
+  &__wrapper
+    display: flex
+    align-items: center
+    padding-top: 60px
+
+  &__back
+    position: absolute
+    top: 50%
+    width: 15px
+    transform: translate3d(0,-50%,0)
+    left: -35px
+    color: white
+    font-size: 24px
+    cursor: pointer
+
+  &__logo
+    // mind right padding for flex prop
+    flex: 0 0 199px
+    position: relative
+    // posr is for header back
+    font-size: 35px
+    padding-right: 30px
+    svg
+      width: 100%
+      overflow: visible
+      .logo-mark
+        // transform-origin: right top
+        // center should be set as BBox with JS
+        transition: transform .35s easeInOutQuint
+    &:hover
+      svg .logo-mark
+        transform: rotate(720deg)
+
+  &__lang
+    margin-left: auto
+    font-size: 12px
+    a
+      position: relative
+      display: inline-block
+      margin-right: 20px
+      color: $colorGray
+      &::after
+        display: inline-block
+        content: ' '
+        position: absolute
+        bottom: 0
+        left: 0
+        right: 100%
+        height: 1px
+        background: currentColor
+        transition: .25s $ease
+
+      &.is-active
+        font-weight: 900
+        color: $colorPrimary
+        pointer-events: none
+        &::after
+          right: 0
+      &:hover
+        &::after
+          right: 0
+
+  &__phone
+    margin-left: 30px
+
+  &.is-white
+    .header__logo
+      .logo-mark
+        fill: white
+      .logo-letters
+        fill: white
+    .b-phone
+      &::after
+        box-shadow: 0 22px 22px 0 rgba(0,0,0,0.12)
+      &__numbers
+        &::after
+          box-shadow: 0 22px 22px 0 rgba(0,0,0,0.12)
+
+
+
++r($desktop)
+  .header
+
+
++r($tablet)
+  .header
+
++r($mobile)
+  .header

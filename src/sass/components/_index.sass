@@ -1,0 +1,53 @@
+// INDEX
+
+.home-title
+  margin-top: 180px
+  position: relative
+  // overflow: hidden
+  &__bg
+    position: absolute
+    top: 20px
+    left: 0
+    right: 0
+    z-index: 1
+    pointer-events: none
+    user-select: none
+    svg
+      width: 100%
+  > .container
+    position: relative
+    z-index: 2
+
+.page-title
+  &__main
+    display: block
+    margin: 0 0 10px 0
+    font-family: $monster
+    font-size: 70px
+    line-height: 1.05
+    font-weight: 900
+    span
+      font-size: 40px
+  &__sub
+    font-size: 20px
+    line-height: 1.5
+    color: $colorGray
+  &--white
+    .page-title
+      &__main
+        color: white
+      &__sub
+        color: rgba(white, .5)
+
+
+// GENERAL COLOR MODS
+.c-gray
+  color: $colorGray
+.c-white
+  color: white
+.c-white60
+  color: rgba(white, .6)
+.c-black
+  color: $fontColor
+.c-primary
+  color: $colorPrimary

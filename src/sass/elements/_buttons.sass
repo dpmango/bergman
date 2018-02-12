@@ -1,0 +1,83 @@
+// buttons
+button
+  -webkit-apperance: none
+  border: 0
+  box-shadow: none
+  cursor: pointer
+  &:focus
+    outline: none
+
+.btn
+  display: inline-block
+  position: relative
+  text-align: center
+  transition: all $transitionSpeed ease-in-out
+  &:focus, &:active
+    outline: none
+  &--block
+    display: block
+    width: 100%
+
+
+/* Phone button (in header)
+.b-phone
+  display: inline-block
+  position: relative
+  &::after
+    // this is animated part onhover
+    display: inline-block
+    content: ' '
+    position: absolute
+    z-index: 1
+    right: 0
+    size: 55px
+    top: 50%
+    right: 0
+    transform: translateY(-50%)
+    background-image: linear-gradient(27deg, #3CAAC4 0%, #7CD2E6 56%, #B4EC51 100%)
+    box-shadow: 0 22px 22px 0 rgba(218,231,236,0.50)
+    border-radius: 100px
+    transition: .25s $ease
+
+  &__numbers
+    position: relative
+    display: flex
+    align-items: center
+    font-weight: 700
+    min-height: 35px
+    padding: 10px 65px 10px 15px
+    font-size: 12px
+    transition: .25s $ease
+    span
+      position: relative
+      z-index: 2
+    &::after
+      // kust a bg which stays the same on hover
+      display: inline-block
+      content: ''
+      position: absolute 0
+      z-index: 1
+      border-radius: 100px
+      background: #FFFFFF
+      box-shadow: 0 22px 22px 0 rgba(218,231,236,0.92)
+
+  // just an icon holder positioned same as ::before
+  &__icon
+    position: absolute
+    z-index: 2
+    display: flex
+    align-items: center
+    justify-content: center
+    min-size: 55px
+    top: 50%
+    right: 0
+    transform: translateY(-50%)
+    color: white
+    font-size: 18px
+
+  &:hover
+    &::after
+      width: 100%
+    .b-phone
+      &__numbers
+        color: white

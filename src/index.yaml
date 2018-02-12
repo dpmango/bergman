@@ -1,0 +1,17 @@
+ProjectTitle: Bergman
+
+PageList:
+- file: homepage.html
+  ready: 100
+- file: development.html
+  ready: 5
+- file: design.html
+  ready: 5
+- file: operation.html
+  ready: 5
+- file: marketing.html
+  ready: 5
+- file: support.html
+  ready: 5
+- file: consulting.html
+  ready: 5

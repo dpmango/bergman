@@ -1,0 +1,79 @@
+// home grid
+.cards-grid.wow(data-animation-delay=".25s")
+  .container
+    div(js-masonry)
+      // grid sizer is required for responsive masonry
+      .grid-sizer
+      // card 
+      a(href="#").grid-card.grid-card--purple-bg
+        .grid-card__bg
+          img(src='img/cardDevBg.png' srcset='img/cardDevBg@2x.png 2x')
+        .grid-card__content
+          .grid-card__content-wrap
+            .grid-card__title <span>bit</span>.Development
+            .grid-card__desc Hochintelligente Lösungen
+          .grid-card__content-icon
+            +icon('ico-arrow')
+      //card
+      a(href="#").grid-card.grid-card--white-bg
+        .grid-card__bg
+          img(src='img/cardDesignBg.png' srcset='img/cardDesignBg@2x.png 2x')
+        .grid-card__content.grid-card__content--black
+          .grid-card__content-wrap
+            .grid-card__title <span>bit</span>.Design
+            .grid-card__desc.c-gray  Wir gestallten Ihren Erfolg
+          .grid-card__content-icon
+            +icon('ico-arrow')
+      //card
+      a(href="#").grid-card.grid-card--dark-bg
+        .grid-card__bg
+          img(src='img/cardOperationBg.png' srcset='img/cardOperationBg@2x.png 2x')
+        .grid-card__content.grid-card__content--black
+          .grid-card__content-wrap
+            .grid-card__title <span>bit</span>.Operation
+            .grid-card__desc Gänsehaut vor Go-Live...
+          .grid-card__content-icon
+            +icon('ico-arrow')
+      //card
+      a(href="#").grid-card.grid-card--white-bg
+        .grid-card__bg
+          img(src='img/cardSupportBg.png' srcset='img/cardSupportBg@2x.png 2x')
+        .grid-card__content
+          .grid-card__content-wrap
+            .grid-card__title.c-black <span>bit</span>.Support
+            .grid-card__desc.c-gray  WReaktionen verringern und mehr Zeit...
+          .grid-card__content-icon.c-black
+            +icon('ico-arrow')
+            
+            
+      // kind of new row      
+      
+      //card
+      a(href="#").grid-card
+        .grid-card__bg
+          img(src='img/cardMarketingBg.png' srcset='img/cardMarketingBg@2x.png 2x')
+        .grid-card__content.grid-card__content--fixed
+          .grid-card__content-wrap
+            .grid-card__title <span>bit</span>.Marketing
+            .grid-card__desc.c-white60  Wir machen die Marke bekannt
+          .grid-card__content-icon
+            +icon('ico-arrow')
+      //card contact map
+      a(href="contact.html").grid-card.grid-card--contact
+        .grid-card__bg
+          img(src='img/cardMap1Bg.jpg' srcset='img/cardMap1Bg@2x.jpg 2x')
+        .grid-card__content.grid-card__content--fixed
+          .grid-card__content-wra
+            .grid-card__desc Am Wallgraben 99, 70565 Stuttgart 
+
+      //card
+      a(href="#").grid-card.grid-card--white-bg
+        .grid-card__bg
+          img(src='img/cardConsultingBg.png' srcset='img/cardConsultingBg@2x.png 2x')
+        .grid-card__content.grid-card__content--fixed
+          .grid-card__content-wrap
+            .grid-card__title.c-black <span>bit</span>.Consulting
+            .grid-card__desc.c-gray Das Optimum zeigen
+          .grid-card__content-icon.c-black
+            +icon('ico-arrow')
+        

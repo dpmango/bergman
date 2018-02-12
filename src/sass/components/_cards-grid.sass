@@ -1,0 +1,105 @@
+/* HOME GRID
+.cards-grid
+  position: relative
+  z-index: 5
+  margin-top: 110px
+  margin-right: -15px
+
+.grid-sizer
+  width: calc(25% - 15px)
+
+.grid-card
+  width: calc(25% - 15px)
+  margin-bottom: 15px
+  position: relative
+  overflow: hidden
+  display: inline-block
+  box-shadow: 0 30px 30px 0 #D0DEE2
+  border-radius: 20px
+  transition: .25s $ease
+  &:hover
+    box-shadow: 0 30px 30px -15px #D0DEE2
+    transform: translate3d(0,-7px,0)
+
+  &__bg
+    font-size: 0
+    svg, img
+      width: 100%
+      max-width: 100%
+
+  &__content
+    display: flex
+    align-items: flex-end
+    margin-top: 10px
+    padding: 10px 20px
+    color: white
+    &-wrap
+      flex: 1 1 auto
+    &-icon
+      flex: 0 0 auto
+      padding-left: 10px
+      padding-bottom: 5px
+      .ico
+        font-size: 13px
+    &--fixed
+      position: absolute
+      bottom: 0
+      left: 0
+      right: 0
+      z-index: 2
+    &--black
+      background: $fontColor
+
+
+  &__title
+    font-family: $monster
+    font-weight: 900
+    font-size: 25px
+    span
+      font-size: 16px
+
+  &__desc
+    font-size: 14px
+    line-height: 2
+    +text-overflow
+
+  &--purple-bg
+    background-image: linear-gradient(-134deg, #3023AE 0%, #C86DD7 100%)
+
+  &--white-bg
+    background-image: linear-gradient(-134deg, #F5FBFD 0%, #FFFFFF 100%)
+  &--dark-bg
+    background-image: linear-gradient(-127deg, #292A2C 0%, #28282A 100%)
+
+  &--contact
+    background-image: linear-gradient(-134deg, #F5FBFD 0%, #FFFFFF 100%)
+    .grid-card
+      &__title
+        font-size: 20px
+      &__content
+        align-items: center
+        color: $fontColor
+        padding: 30px 20px 25px 20px
+        &-icon
+          padding-bottom: 0
+
++r($desktop)
+  .grid-sizer
+    width: calc(33% - 15px)
+
+  .grid-card
+    width: calc(33% - 15px)
+
++r($tablet)
+  .grid-sizer
+    width: calc(50% - 15px)
+
+  .grid-card
+    width: calc(50% - 15px)
+
++r($mobile)
+  .grid-sizer
+    width: calc(100% - 15px)
+
+  .grid-card
+    width: calc(100% - 15px)

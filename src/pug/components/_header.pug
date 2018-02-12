@@ -1,0 +1,23 @@
+// HEADER :: START
+header.header.wow(class=headerClass data-animation-class="wowFadeDown" data-animation-delay=".75s")
+  .container
+    .header__wrapper
+
+      a(href="homepage.html").header__logo
+        .header__back(js-back)
+          +icon('ico-page-back')
+        
+        include ../../inline-svg/logo.svg
+      
+      // lang selector
+      .header__lang
+        a(href="#").is-active DE
+        a(href="#") EN
+      
+      // phone
+      a(href="tel:649-218-1256").header__phone.b-phone
+        .b-phone__numbers
+          span 649-218-1256
+        .b-phone__icon
+          +icon('ico-phone')
+      

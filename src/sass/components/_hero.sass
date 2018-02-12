@@ -1,0 +1,29 @@
+/* HERO
+.hero
+  padding-top: 50px
+  padding-bottom: 60px
+  &--purple-bg
+    background-image: linear-gradient(-134deg, #3023AE 0%, #8A4FC6 59%, #C86DD7 100%)
+
+  &__wrapper
+    display: flex
+    align-items: center
+
+  &__title
+    flex: 1 2 auto
+  &__image
+    flex: 0 1 auto
+    img, svg
+      max-width: 100%
+
+
++r($desktop)
+  .hero
+    &__wrapper
+      flex-direction: column-reverse
+
+    &__title
+      flex: 0 0 auto
+    &__image
+      flex: 0 0 auto
+      margin-bottom: 50px
