@@ -20,136 +20,136 @@ block content
   .cards-grid.wow(data-animation-delay="1.25s")
     .container
       // HOW TO MODIFY CARD
-      // 1) .grid-card modifiers classes are used to set whole card background
-      // 2) .grid-card--contact modifier does set different nested styles (font-size, paddings)
-      // 3) when .grid-card__bg image should be overlayed with content below, use .grid-card__content--fixed to fix content as pos: absolute
-      // 4) .grid-card__content--black only sets bg-color
+      // 1) .card modifiers classes are used to set whole card background
+      // 2) .card--contact modifier does set different nested styles (font-size, paddings)
+      // 3) when .card__bg image should be overlayed with content below, use .card__content--fixed to fix content as pos: absolute
+      // 4) .card__content--black only sets bg-color
       // 5) Defalt content color is WHITE! style induvidual colors as .c-black, .c-gray , etc.. cause it's a lot things going on there..
       div(js-masonry)
         // grid sizer is required for responsive masonry
         .grid-sizer
         // card 
-        a(href="development.html").grid-card.grid-card--purple-bg
-          .grid-card__bg
+        a(href="development.html").card.card--purple-bg
+          .card__bg
             img(src='img/cardDevBg.png' srcset='img/cardDevBg@2x.png 2x')
-          .grid-card__content
-            .grid-card__content-wrap
-              .grid-card__title <span>bit</span>.Development
-              .grid-card__desc Hochintelligente Lösungen
-            .grid-card__content-icon
+          .card__content
+            .card__content-wrap
+              .card__title <span>bit</span>.Development
+              .card__desc Hochintelligente Lösungen
+            .card__content-icon
               +icon('ico-arrow')
         //card
-        a(href="#").grid-card.grid-card--white-bg
-          .grid-card__bg
+        a(href="design.html").card.card--white-bg
+          .card__bg
             img(src='img/cardDesignBg.png' srcset='img/cardDesignBg@2x.png 2x')
-          .grid-card__content.grid-card__content--black
-            .grid-card__content-wrap
-              .grid-card__title <span>bit</span>.Design
-              .grid-card__desc.c-gray  Wir gestallten Ihren Erfolg
-            .grid-card__content-icon
+          .card__content.card__content--black
+            .card__content-wrap
+              .card__title <span>bit</span>.Design
+              .card__desc.c-gray  Wir gestallten Ihren Erfolg
+            .card__content-icon
               +icon('ico-arrow')
         //card contact 
-        a(href="mailto:support@bergmann-infotech.de").grid-card.grid-card--contact
-          .grid-card__content
-            .grid-card__content-wrap
-              .grid-card__title E-Mail
-              .grid-card__desc.c-gray support@bergmann-infotech.de
-            .grid-card__content-icon
+        a(href="mailto:support@bergmann-infotech.de").card.card--contact
+          .card__content
+            .card__content-wrap
+              .card__title E-Mail
+              .card__desc.c-gray support@bergmann-infotech.de
+            .card__content-icon
               i.icon.icon-email-grad
         //card
-        a(href="#").grid-card
-          .grid-card__bg
+        a(href="portfolio.html").card
+          .card__bg
             img(src='img/cardPortfolioBg.png' srcset='img/cardPortfolioBg@2x.png 2x')
-          .grid-card__content.grid-card__content--fixed
-            .grid-card__content-wrap
-              .grid-card__title Portfolio
-              .grid-card__desc.c-gray So haben wir's gemacht
-            .grid-card__content-icon
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title Portfolio
+              .card__desc.c-gray So haben wir's gemacht
+            .card__content-icon
               +icon('ico-arrow')
         //card
-        a(href="#").grid-card.grid-card--white-bg
-          .grid-card__bg
+        a(href="consulting.html").card.card--white-bg
+          .card__bg
             img(src='img/cardConsultingBg.png' srcset='img/cardConsultingBg@2x.png 2x')
-          .grid-card__content.grid-card__content--fixed
-            .grid-card__content-wrap
-              .grid-card__title.c-black <span>bit</span>.Consulting
-              .grid-card__desc.c-gray Das Optimum zeigen
-            .grid-card__content-icon.c-black
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title.c-black <span>bit</span>.Consulting
+              .card__desc.c-gray Das Optimum zeigen
+            .card__content-icon.c-black
               +icon('ico-arrow')
         
         
         // kind of new row
         
         //card contact 
-        a(href="tel:(03 42 23) 4 32 11").grid-card.grid-card--contact
-          .grid-card__content
-            .grid-card__content-wrap
-              .grid-card__title (03 42 23) 4 32 11
-              .grid-card__desc.c-gray Ruft uns an
-            .grid-card__content-icon
+        a(href="tel:(03 42 23) 4 32 11").card.card--contact
+          .card__content
+            .card__content-wrap
+              .card__title (03 42 23) 4 32 11
+              .card__desc.c-gray Ruft uns an
+            .card__content-icon
               i.icon.icon-phone-grad
         //card
-        a(href="#").grid-card.grid-card--dark-bg
-          .grid-card__bg
+        a(href="operation.html").card.card--dark-bg
+          .card__bg
             img(src='img/cardOperationBg.png' srcset='img/cardOperationBg@2x.png 2x')
-          .grid-card__content.grid-card__content--black
-            .grid-card__content-wrap
-              .grid-card__title <span>bit</span>.Operation
-              .grid-card__desc Gänsehaut vor Go-Live...
-            .grid-card__content-icon
+          .card__content.card__content--black
+            .card__content-wrap
+              .card__title <span>bit</span>.Operation
+              .card__desc Gänsehaut vor Go-Live...
+            .card__content-icon
               +icon('ico-arrow')
         //card
-        a(href="#").grid-card.grid-card--white-bg
-          .grid-card__bg
+        a(href="support.html").card.card--white-bg
+          .card__bg
             img(src='img/cardSupportBg.png' srcset='img/cardSupportBg@2x.png 2x')
-          .grid-card__content
-            .grid-card__content-wrap
-              .grid-card__title.c-black <span>bit</span>.Support
-              .grid-card__desc.c-gray  WReaktionen verringern und mehr Zeit...
-            .grid-card__content-icon.c-black
+          .card__content
+            .card__content-wrap
+              .card__title.c-black <span>bit</span>.Support
+              .card__desc.c-gray  WReaktionen verringern und mehr Zeit...
+            .card__content-icon.c-black
               +icon('ico-arrow')
         //card contact 
-        a(href="https://slack.com" target="_blank").grid-card.grid-card--contact
-          .grid-card__content
-            .grid-card__content-wrap
-              .grid-card__title Slack
-              .grid-card__desc Klick für unsere Slack- Service
-            .grid-card__content-icon
+        a(href="https://slack.com" target="_blank").card.card--contact
+          .card__content
+            .card__content-wrap
+              .card__title Slack
+              .card__desc Klick für unsere Slack- Service
+            .card__content-icon
               i.icon.icon-slack-grad
         //card
-        a(href="#").grid-card
-          .grid-card__bg
+        a(href="marketing.html").card
+          .card__bg
             img(src='img/cardMarketingBg.png' srcset='img/cardMarketingBg@2x.png 2x')
-          .grid-card__content.grid-card__content--fixed
-            .grid-card__content-wrap
-              .grid-card__title <span>bit</span>.Marketing
-              .grid-card__desc.c-white60  Wir machen die Marke bekannt
-            .grid-card__content-icon
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title <span>bit</span>.Marketing
+              .card__desc.c-white60  Wir machen die Marke bekannt
+            .card__content-icon
               +icon('ico-arrow')
         //card contact map
-        a(href="contact.html").grid-card.grid-card--contact
-          .grid-card__bg
+        a(href="contact.html").card.card--contact
+          .card__bg
             img(src='img/cardMap1Bg.jpg' srcset='img/cardMap1Bg@2x.jpg 2x')
-          .grid-card__content.grid-card__content--fixed
-            .grid-card__content-wra
-              .grid-card__desc Am Wallgraben 99, 70565 Stuttgart 
+          .card__content.card__content--fixed
+            .card__content-wra
+              .card__desc Am Wallgraben 99, 70565 Stuttgart 
         //card
-        a(href="#").grid-card
-          .grid-card__bg
+        a(href="events.html").card
+          .card__bg
             img(src='img/cardEventBg.jpg' srcset='img/cardEventBg@2x.jpg 2x')
-          .grid-card__content.grid-card__content--fixed
-            .grid-card__content-wrap
-              .grid-card__title.c-black Geschichte
-              .grid-card__desc.c-gray  Was heißt überhaupt bit?
-            .grid-card__content-icon.c-black
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title.c-black Geschichte
+              .card__desc.c-gray  Was heißt überhaupt bit?
+            .card__content-icon.c-black
               +icon('ico-arrow')    
         //card contact map
-        a(href="contact.html").grid-card.grid-card--contact
-          .grid-card__bg
+        a(href="contact.html").card.card--contact
+          .card__bg
             img(src='img/cardMap2Bg.jpg' srcset='img/cardMap2Bg@2x.jpg 2x')
-          .grid-card__content.grid-card__content--fixed
-            .grid-card__content-wra
-              .grid-card__desc Pretzscher Straße 37, 04880 Dommitzsch
+          .card__content.card__content--fixed
+            .card__content-wra
+              .card__desc Pretzscher Straße 37, 04880 Dommitzsch
               
               
                 

@@ -13,12 +13,19 @@
   &__back
     position: absolute
     top: 50%
-    width: 15px
+    width: 30px
     transform: translate3d(0,-50%,0)
     left: -35px
+    padding-right: 15px
     color: white
     font-size: 24px
     cursor: pointer
+    opacity: 0
+    pointer-events: none
+    transition: .25s $ease
+    &:hover
+      transform: translate3d(-7px,-50%,0)
+
 
   &__logo
     // mind right padding for flex prop
@@ -34,9 +41,12 @@
         // transform-origin: right top
         // center should be set as BBox with JS
         transition: transform .35s easeInOutQuint
-    &:hover
-      svg .logo-mark
-        transform: rotate(720deg)
+    &-link
+      position: relative
+      display: inline-block
+      &:hover
+        svg .logo-mark
+          transform: rotate(720deg)
 
   &__lang
     margin-left: auto
@@ -83,6 +93,10 @@
         &::after
           box-shadow: 0 22px 22px 0 rgba(0,0,0,0.12)
 
+  &.is-back-visible
+    .header__back
+      opacity: 1
+      pointer-events: all
 
 
 +r($desktop)

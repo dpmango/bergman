@@ -140,7 +140,7 @@ $(document).ready(function(){
 
   function initMasonry(){
     _document.find('[js-masonry]').masonry({
-      itemSelector: '.grid-card',
+      itemSelector: '.card',
       columnWidth: '.grid-sizer',
       percentPosition: true,
       gutter: 15
@@ -309,7 +309,7 @@ $(document).ready(function(){
     var cx = bb.x + bb.width / 2;
     var cy = bb.y + bb.height / 2;
 
-    var bodyStyle = "<style>"+ "." + $(target_el).parent().attr('class') + " ." + target_class + " { transform-origin: "+cx + 'px ' + cy + 'px'+"; }</style>"
+    var bodyStyle = "<style>"+ "." + $(target_el).parent().parent().attr('class') + " ." + target_class + " { transform-origin: "+cx + 'px ' + cy + 'px'+"; }</style>"
     $( bodyStyle ).appendTo( "body" )
   }
 
@@ -397,9 +397,15 @@ $(document).ready(function(){
   Barba.Pjax.start();
 
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
+    // update header class
     var newHeaderClass = $(newPageRawHTML).find('[js-headerClassToggler]').attr('class')
-    _document.find('.header').removeClass('is-white').addClass(newHeaderClass);
+    _document.find('.header').removeClass('is-white').addClass(newHeaderClass).addClass('is-back-visible');
 
+    // populate back-link
+    _document.find('.header__back').attr('href', Barba.HistoryManager.prevStatus().url)
+    // console.log(Barba.HistoryManager.prevStatus().url)
+
+    // generic functions call
     pageReady();
     triggerBody();
 
@@ -410,6 +416,10 @@ $(document).ready(function(){
     $(window).scroll();
     $(window).resize();
   }
+
+  _document.on('click', '[js-back]', function(){
+
+  })
 
 
   //////////

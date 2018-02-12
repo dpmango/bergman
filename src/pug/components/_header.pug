@@ -3,11 +3,11 @@ header.header.wow(class=headerClass data-animation-class="wowFadeDown" data-anim
   .container
     .header__wrapper
 
-      a(href="homepage.html").header__logo
-        .header__back(js-back)
+      .header__logo
+        a.header__back(js-back href="#")
           +icon('ico-page-back')
-        
-        include ../../inline-svg/logo.svg
+        a.header__logo-link(href="homepage.html")
+          include ../../inline-svg/logo.svg
       
       // lang selector
       .header__lang
