@@ -63,16 +63,20 @@ $(document).ready(function(){
     initHeaderScroll();
 
     initPopups();
-    initMasonry();
     initScrollMonitor();
     initMasks();
     initTeleport();
 
-    parseSvg();
+    // parseSvg();
 
     // development helper
     _window.on('resize', debounce(setBreakpoint, 200))
   }
+
+  _window.on('load', function(){
+    initMasonry();
+    parseSvg();
+  })
 
   pageReady();
 
@@ -139,12 +143,19 @@ $(document).ready(function(){
   //////////
 
   function initMasonry(){
-    _document.find('[js-masonry]').masonry({
-      itemSelector: '.card',
-      columnWidth: '.grid-sizer',
-      percentPosition: true,
-      gutter: 15
-    });
+    $('[js-masonry]').each(function(i, masonry){
+      var $masonry = $(masonry);
+      var $grid;
+      console.log(i, $masonry)
+
+      $grid = $masonry.masonry({
+        itemSelector: '.card',
+        columnWidth: '.grid-sizer',
+        percentPosition: true,
+        gutter: 15
+      });
+
+    })
   }
 
 
@@ -383,7 +394,8 @@ $(document).ready(function(){
       });
 
       $el.animate({ opacity: 1 }, 200, function() {
-        triggerBody();
+        // triggerBody();
+        document.body.scrollTop = 0;
         _this.done();
       });
     }
@@ -408,11 +420,12 @@ $(document).ready(function(){
     // generic functions call
     pageReady();
     triggerBody();
+    setTimeout(initMasonry, 300)
 
   });
 
   function triggerBody(num){
-    document.body.scrollTop = 0;
+    document.body.scrollTop = 1;
     $(window).scroll();
     $(window).resize();
   }

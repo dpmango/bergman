@@ -1,11 +1,17 @@
-// home grid
-.cards-grid.wow(data-animation-delay=".25s")
+
+.more-cards
+  .container
+    // PAGE TITLE
+    .page-title.page-title--narrow
+      h2.page-title__main.wow <span>bit</span>.Pakete
+      .page-title__desc.wow(data-animation-delay='.2s') Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labor
+
+.cards-grid.wow(data-animation-delay=".35s")
   .container
     div(js-masonry)
       // grid sizer is required for responsive masonry
       .grid-sizer
-      // card 
-      a(href="#").card.card--purple-bg
+      a(href="development.html").card.card--purple-bg
         .card__bg
           img(src='img/cardDevBg.png' srcset='img/cardDevBg@2x.png 2x')
         .card__content
@@ -15,7 +21,7 @@
           .card__content-icon
             +icon('ico-arrow')
       //card
-      a(href="#").card.card--white-bg
+      a(href="design.html").card.card--white-bg
         .card__bg
           img(src='img/cardDesignBg.png' srcset='img/cardDesignBg@2x.png 2x')
         .card__content.card__content--black
@@ -25,7 +31,7 @@
           .card__content-icon
             +icon('ico-arrow')
       //card
-      a(href="#").card.card--dark-bg
+      a(href="operation.html").card.card--dark-bg
         .card__bg
           img(src='img/cardOperationBg.png' srcset='img/cardOperationBg@2x.png 2x')
         .card__content.card__content--black
@@ -35,7 +41,7 @@
           .card__content-icon
             +icon('ico-arrow')
       //card
-      a(href="#").card.card--white-bg
+      a(href="support.html").card.card--white-bg
         .card__bg
           img(src='img/cardSupportBg.png' srcset='img/cardSupportBg@2x.png 2x')
         .card__content
@@ -44,12 +50,29 @@
             .card__desc.c-gray  WReaktionen verringern und mehr Zeit...
           .card__content-icon.c-black
             +icon('ico-arrow')
-            
-            
-      // kind of new row      
-      
       //card
-      a(href="#").card
+      a(href="marketing.html").card
+        .card__bg
+          img(src='img/cardPerson1Bg.jpg' srcset='img/cardPerson1Bg@2x.jpg 2x')
+        .card__content.card__content--fixed
+          .card__content-wrap
+            .card__title Kontakte
+            .card__desc Ingmar Bergmann
+          .card__content-icon
+            +icon('ico-arrow')
+      
+      //card contact map
+      a(href="mailto:support@bergmann-infotech.de").card.card--contact
+        .card__bg
+          img(src='img/cardImpressiumBg.jpg' srcset='img/cardImpressiumBg@2x.jpg 2x')
+        .card__content.card__content--fixed
+          .card__content-wrap
+            .card__title Impressum
+            .card__desc support@bergmann-infotech.de
+          .card__content-icon
+            i.icon.icon-slack-grad    
+      //card
+      a(href="marketing.html").card
         .card__bg
           img(src='img/cardMarketingBg.png' srcset='img/cardMarketingBg@2x.png 2x')
         .card__content.card__content--fixed
@@ -57,17 +80,9 @@
             .card__title <span>bit</span>.Marketing
             .card__desc.c-white60  Wir machen die Marke bekannt
           .card__content-icon
-            +icon('ico-arrow')
-      //card contact map
-      a(href="contact.html").card.card--contact
-        .card__bg
-          img(src='img/cardMap1Bg.jpg' srcset='img/cardMap1Bg@2x.jpg 2x')
-        .card__content.card__content--fixed
-          .card__content-wra
-            .card__desc Am Wallgraben 99, 70565 Stuttgart 
-
+            +icon('ico-arrow') 
       //card
-      a(href="#").card.card--white-bg
+      a(href="consulting.html").card.card--white-bg
         .card__bg
           img(src='img/cardConsultingBg.png' srcset='img/cardConsultingBg@2x.png 2x')
         .card__content.card__content--fixed
@@ -75,5 +90,11 @@
             .card__title.c-black <span>bit</span>.Consulting
             .card__desc.c-gray Das Optimum zeigen
           .card__content-icon.c-black
-            +icon('ico-arrow')
-        
+            +icon('ico-arrow') 
+      //card contact map
+      a(href="contact.html").card.card--contact
+        .card__bg
+          img(src='img/cardMap1Bg.jpg' srcset='img/cardMap1Bg@2x.jpg 2x')
+        .card__content.card__content--fixed
+          .card__content-wrap
+            .card__desc Am Wallgraben 99, 70565 Stuttgart 
