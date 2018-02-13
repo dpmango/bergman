@@ -102,10 +102,23 @@
 
 +r($desktop)
   .header
+    &__wrapper
+      // padding-top: 40px
 
 
 +r($tablet)
   .header
+    &__wrapper
 
 +r($mobile)
   .header
+    &__lang
+      display: none
+    &__phone
+      margin-left: auto
+
++r(440)
+  .header
+    &__logo
+      // mind right padding for flex prop
+      flex: 0 0 183px

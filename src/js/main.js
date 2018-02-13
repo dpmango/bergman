@@ -328,6 +328,28 @@ $(document).ready(function(){
   // SCROLLMONITOR - WOW LIKE
   ////////////
   function initScrollMonitor(){
+    animeHomeBg();
+
+    function animeHomeBg(){
+      var el = $('[js-animeHomeBg]')
+      var elWatcher = scrollMonitor.create( el );
+      var path1 = el.find('.path1');
+
+      elWatcher.enterViewport(throttle(function() {
+        // anime({
+        //   targets: path1.get(0),
+        //   translateY: {
+        //     value: 0,
+        //     duration: 500,
+        //     delay: 400
+        //   },
+        //   rotate: -10,
+        // });
+      }, 100, {
+        'leading': true
+      }));
+    }
+
     $('.wow').each(function(i, el){
 
       var elWatcher = scrollMonitor.create( $(el) );

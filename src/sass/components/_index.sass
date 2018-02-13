@@ -8,17 +8,38 @@
   &__bg
     position: absolute
     top: 20px
-    left: 0
     right: 0
+    width: 100%
+    min-width: 940px
     z-index: 1
     pointer-events: none
     user-select: none
     svg
       width: 100%
+    .container
+      position: relative
   > .container
     position: relative
     z-index: 2
 
++r($desktop)
+  .home-title
+    margin-bottom: 20px
+
++r($tablet)
+  .home-title
+    margin-bottom: 0px
+    &__bg
+      top: -20px
+
++r($mobile)
+  .home-title
+    margin-top: 155px
+    &__bg
+      top: -130px
+      right: -150px
+
+/* page title component
 .page-title
   &__main
     display: block
@@ -28,7 +49,7 @@
     line-height: 1.05
     font-weight: 900
     span
-      font-size: 40px
+      font-size: .57em
   &__sub
     font-size: 20px
     line-height: 1.5
@@ -45,7 +66,33 @@
       &__sub
         color: rgba(white, .5)
 
++r($desktop)
+  .page-title
+    &__main
+      font-size: 60px
+    &__sub
+      font-size: 18px
++r($tablet)
+  .page-title
+    &__main
+      font-size: 45px
+    &__sub
+      font-size: 16px
 
++r($mobile)
+  .page-title
+    &__main
+      font-size: 38px
+
++r(414)
+  .page-title
+    &__main
+      font-size: 31px
+
++r($mobile-s)
+  .page-title
+    &__main
+      font-size: 28px
 
 // GENERAL COLOR MODS
 .c-gray

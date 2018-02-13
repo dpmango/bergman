@@ -4,10 +4,10 @@ title: Homepage
 extends shared/_layout
 block content
   
-  
+  // HOME TITLE
   .home-title
     .home-title__bg.wow(data-animation-delay='1.6s')
-      .container
+      .container(js-animeHomeBg)
         include ../inline-svg/home-title-bg.svg
     .container
       // PAGE TITLE
@@ -16,7 +16,7 @@ block content
         .page-title__sub.wow(data-animation-delay='.2s') Ein Ort, wo intelligente Lösungen mit durchdachtem Design erstellt werden.
       
   
-  // home grid
+  // HOME GRID
   .cards-grid.wow(data-animation-delay="1.25s")
     .container
       // HOW TO MODIFY CARD

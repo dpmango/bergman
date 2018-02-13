@@ -23,6 +23,7 @@ function build(callback) {
     'javascript',
     'images',
     'sprite:svg',
+    'svg-minify',
     'sprite:png',
     'copy',
     'list-pages',

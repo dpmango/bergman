@@ -81,3 +81,17 @@ button
     .b-phone
       &__numbers
         color: white
+
++r(440)
+  .b-phone
+    &::after
+      size: 45px
+    &__numbers
+      display: none
+    &__icon
+      min-size: 45px
+    &:hover
+      &::after
+        width: 45px
+        transform: translateY(-50%) rotate(180deg)
+        box-shadow: none
