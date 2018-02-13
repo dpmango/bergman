@@ -78,7 +78,8 @@ block content
               +icon('ico-arrow')
         
         
-        // kind of new row
+        // KIND of new row
+        // refactor here! 
         
         //card contact 
         a(href="tel:(03 42 23) 4 32 11").card.card--contact
@@ -89,16 +90,6 @@ block content
             .card__content-icon
               i.icon.icon-phone-grad
         //card
-        a(href="operation.html").card.card--dark-bg
-          .card__bg
-            img(src='img/cardOperationBg.png' srcset='img/cardOperationBg@2x.png 2x')
-          .card__content.card__content--black
-            .card__content-wrap
-              .card__title <span>bit</span>.Operation
-              .card__desc Gänsehaut vor Go-Live...
-            .card__content-icon
-              +icon('ico-arrow')
-        //card
         a(href="support.html").card.card--white-bg
           .card__bg
             img(src='img/cardSupportBg.png' srcset='img/cardSupportBg@2x.png 2x')
@@ -108,6 +99,24 @@ block content
               .card__desc.c-gray  WReaktionen verringern und mehr Zeit...
             .card__content-icon.c-black
               +icon('ico-arrow')
+        //card contact map
+        a(href="contact.html").card.card--contact
+          .card__bg
+            img(src='img/cardMap1Bg.jpg' srcset='img/cardMap1Bg@2x.jpg 2x')
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__desc Am Wallgraben 99, 70565 Stuttgart 
+        //card
+        a(href="operation.html").card.card--dark-bg
+          .card__bg
+            img(src='img/cardOperationBg.png' srcset='img/cardOperationBg@2x.png 2x')
+          .card__content.card__content--black
+            .card__content-wrap
+              .card__title <span>bit</span>.Operation
+              .card__desc Gänsehaut vor Go-Live...
+            .card__content-icon
+              +icon('ico-arrow')
+              
         //card contact 
         a(href="https://slack.com" target="_blank").card.card--contact
           .card__content
@@ -115,7 +124,7 @@ block content
               .card__title Slack
               .card__desc Klick für unsere Slack- Service
             .card__content-icon
-              i.icon.icon-slack-grad
+              i.icon.icon-slack-grad 
         //card
         a(href="marketing.html").card
           .card__bg
@@ -125,14 +134,8 @@ block content
               .card__title <span>bit</span>.Marketing
               .card__desc.c-white60  Wir machen die Marke bekannt
             .card__content-icon
-              +icon('ico-arrow')
-        //card contact map
-        a(href="contact.html").card.card--contact
-          .card__bg
-            img(src='img/cardMap1Bg.jpg' srcset='img/cardMap1Bg@2x.jpg 2x')
-          .card__content.card__content--fixed
-            .card__content-wra
-              .card__desc Am Wallgraben 99, 70565 Stuttgart 
+              +icon('ico-arrow')  
+
         //card
         a(href="events.html").card
           .card__bg
@@ -148,8 +151,50 @@ block content
           .card__bg
             img(src='img/cardMap2Bg.jpg' srcset='img/cardMap2Bg@2x.jpg 2x')
           .card__content.card__content--fixed
-            .card__content-wra
+            .card__content-wrap
               .card__desc Pretzscher Straße 37, 04880 Dommitzsch
-              
-              
-                
+        
+        
+        // KIND of last row
+      
+        //card
+        a(href="marketing.html").card
+          .card__bg
+            img(src='img/cardPerson1Bg.jpg' srcset='img/cardPerson1Bg@2x.jpg 2x')
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title Kontakte
+              .card__desc Ingmar Bergmann
+            .card__content-icon
+              +icon('ico-arrow')
+        //card
+        a(href="design.html").card.card--white-bg
+          .card__bg
+            img(src='img/cardKarriereBg.jpg' srcset='img/cardKarriereBg@2x.jpg 2x')
+          .card__content.card__content--black
+            .card__content-wrap
+              .card__title Karriere
+              .card__desc.c-gray Wir suche Dich
+            .card__content-icon.c-gray
+              +icon('ico-arrow')
+
+        //card
+        a(href="marketing.html").card
+          .card__bg
+            img(src='img/cardPerson2Bg.jpg' srcset='img/cardPerson2Bg@2x.jpg 2x')
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title.c-black Kontakte
+              .card__desc.c-gray Grigory N.
+            .card__content-icon.c-gray
+              +icon('ico-arrow')
+        //card contact map
+        a(href="mailto:support@bergmann-infotech.de").card.card--contact
+          .card__bg
+            img(src='img/cardImpressiumBg.jpg' srcset='img/cardImpressiumBg@2x.jpg 2x')
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title Impressum
+              .card__desc support@bergmann-infotech.de
+            .card__content-icon
+              i.icon.icon-slack-grad
