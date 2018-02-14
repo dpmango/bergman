@@ -4,17 +4,17 @@ PageList:
 - file: homepage.html
   ready: 85
 - file: development.html
-  ready: 50
+  ready: 65
 - file: design.html
-  ready: 50
+  ready: 65
 - file: operation.html
-  ready: 50
+  ready: 65
 - file: marketing.html
-  ready: 50
+  ready: 65
 - file: support.html
-  ready: 50
+  ready: 65
 - file: consulting.html
-  ready: 50
+  ready: 65
 - file: portfolio.html
   ready: 0
 - file: events.html
