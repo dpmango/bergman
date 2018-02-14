@@ -8,6 +8,15 @@ $sprite: (
 		total-height: 66px,
 		image: '../img/sprite.png'
 	),
+	list-li: (
+		offset-x: -35px,
+		offset-y: -41px,
+		width: 20px,
+		height: 20px,
+		total-width: 67px,
+		total-height: 66px,
+		image: '../img/sprite.png'
+	),
 	phone-grad: (
 		offset-x: 0px,
 		offset-y: -41px,
@@ -84,6 +93,9 @@ $sprite: (
 
 	.icon-email-grad {
 		@include sprite(email-grad)
+	}
+	.icon-list-li {
+		@include sprite(list-li)
 	}
 	.icon-phone-grad {
 		@include sprite(phone-grad)

@@ -2,16 +2,26 @@ ProjectTitle: Bergman
 
 PageList:
 - file: homepage.html
-  ready: 75
+  ready: 85
 - file: development.html
-  ready: 15
+  ready: 50
 - file: design.html
-  ready: 15
+  ready: 50
 - file: operation.html
-  ready: 15
+  ready: 50
 - file: marketing.html
-  ready: 15
+  ready: 50
 - file: support.html
-  ready: 15
+  ready: 50
 - file: consulting.html
-  ready: 15
+  ready: 50
+- file: portfolio.html
+  ready: 0
+- file: events.html
+  ready: 0
+- file: contacts.html
+  ready: 0
+- file: karriere.html
+  ready: 0
+- file: purposal.html
+  ready: 0
