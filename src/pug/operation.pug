@@ -6,18 +6,18 @@ extends shared/_layout
 block content
   
   // SERVICE :: HERO
-  .hero.hero--purple-bg
+  .hero.hero--black
     .hero__waves
       include ../inline-svg/heroWaves.svg
     .container
       .hero__wrapper
         // PAGE TITLE
         .hero__title.page-title.page-title--white
-          h1.page-title__main.wow <span>bit</span>.Design
-          .page-title__sub.wow(data-animation-delay='.2s') Die digitale Transformation ist überall im Munde. Wir helfen Ihnen dabei Ihre Prozesse, die rundum Ihres Produkt sind, zu verbessern und helfen bei der Schulung Ihrer Experten. 
-        
-        .hero__image
-          include ../inline-svg/min/heroDev.svg
+          h1.page-title__main.wow <span>bit</span>.Operation
+          .page-title__sub.wow(data-animation-delay='.2s') Gänsehaut vor Go-Live...
+
+        .hero__image.wow(data-animation-delay=".8s")
+          include ../inline-svg/min/heroOperation.svg
     
   include components/_services-content
   include components/_ingmar

@@ -166,42 +166,28 @@ $(document).ready(function(){
   function initPopups(){
     // Magnific Popup
     var startWindowScroll = 0;
-    $('[js-popup]').magnificPopup({
-      type: 'inline',
-      fixedContentPos: true,
-      fixedBgPos: true,
-      overflowY: 'auto',
-      closeBtnInside: true,
-      preloader: false,
-      midClick: true,
-      removalDelay: 300,
-      mainClass: 'popup-buble',
-      callbacks: {
-        beforeOpen: function() {
-          startWindowScroll = _window.scrollTop();
-          // $('html').addClass('mfp-helper');
-        },
-        close: function() {
-          // $('html').removeClass('mfp-helper');
-          _window.scrollTop(startWindowScroll);
-        }
-      }
-    });
+    // $('[js-modal-case]').magnificPopup({
+    //   type: 'inline',
+    //   fixedContentPos: true,
+    //   fixedBgPos: true,
+    //   overflowY: 'auto',
+    //   closeBtnInside: true,
+    //   preloader: false,
+    //   midClick: true,
+    //   removalDelay: 300,
+    //   mainClass: 'popup-buble',
+    //   callbacks: {
+    //     beforeOpen: function() {
+    //       startWindowScroll = _window.scrollTop();
+    //       // $('html').addClass('mfp-helper');
+    //     },
+    //     close: function() {
+    //       // $('html').removeClass('mfp-helper');
+    //       _window.scrollTop(startWindowScroll);
+    //     }
+    //   }
+    // });
 
-    // $('[js-popup-gallery]').magnificPopup({
-  	// 	delegate: 'a',
-  	// 	type: 'image',
-  	// 	tLoading: 'Загрузка #%curr%...',
-  	// 	mainClass: 'popup-buble',
-  	// 	gallery: {
-  	// 		enabled: true,
-  	// 		navigateByImgClick: true,
-  	// 		preload: [0,1]
-  	// 	},
-  	// 	image: {
-  	// 		tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
-  	// 	}
-  	// });
   }
 
   function closeMfp(){
@@ -393,6 +379,8 @@ $(document).ready(function(){
 
   Barba.Pjax.Dom.containerClass = "page";
 
+  var easingSwing = [.02, .01, .47, 1];
+
   var FadeTransition = Barba.BaseTransition.extend({
     start: function() {
       Promise
@@ -401,7 +389,20 @@ $(document).ready(function(){
     },
 
     fadeOut: function() {
-      return $(this.oldContainer).animate({ opacity: .5 }, 200).promise();
+      var deferred = Barba.Utils.deferred();
+
+      // return $(this.oldContainer).animate({ opacity: .5 }, 200).promise();
+      anime({
+        targets: this.oldContainer,
+        opacity : .5,
+        easing: easingSwing, // swing
+        duration: 300,
+        complete: function(anim){
+          deferred.resolve();
+        }
+      })
+
+      return deferred.promise
     },
 
     fadeIn: function() {
@@ -415,13 +416,26 @@ $(document).ready(function(){
         opacity : .5
       });
 
-      $el.animate({ opacity: 1 }, 200, function() {
-        // triggerBody();
-        document.body.scrollTop = 0;
-        _this.done();
+      anime({
+        targets: "html, body",
+        scrollTop: 0,
+        easing: easingSwing, // swing
+        duration: 150
+      });
+
+      anime({
+        targets: this.newContainer,
+        opacity: 1,
+        easing: easingSwing, // swing
+        duration: 300,
+        complete: function(anim) {
+          triggerBody()
+          _this.done();
+        }
       });
     }
   });
+
 
   Barba.Pjax.getTransition = function() {
     return FadeTransition;
@@ -447,7 +461,6 @@ $(document).ready(function(){
   });
 
   function triggerBody(num){
-    document.body.scrollTop = 1;
     $(window).scroll();
     $(window).resize();
   }

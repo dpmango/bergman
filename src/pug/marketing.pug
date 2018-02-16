@@ -6,7 +6,7 @@ extends shared/_layout
 block content
   
   // SERVICE :: HERO
-  .hero.hero--purple-bg
+  .hero.hero--blue-bg
     .hero__waves
       include ../inline-svg/heroWaves.svg
     .container
@@ -14,10 +14,10 @@ block content
         // PAGE TITLE
         .hero__title.page-title.page-title--white
           h1.page-title__main.wow <span>bit</span>.Marketing
-          .page-title__sub.wow(data-animation-delay='.2s') Die digitale Transformation ist überall im Munde. Wir helfen Ihnen dabei Ihre Prozesse, die rundum Ihres Produkt sind, zu verbessern und helfen bei der Schulung Ihrer Experten. 
-        
-        .hero__image
-          include ../inline-svg/min/heroDev.svg
+          .page-title__sub.wow(data-animation-delay='.2s') Wir machen die Marke bekannt
+          
+        .hero__image.wow(data-animation-delay=".8s")
+          include ../inline-svg/min/heroMarketing.svg
     
   include components/_services-content
   include components/_grigory

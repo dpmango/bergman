@@ -1,0 +1,112 @@
+---
+title: PORTFOLIO
+headerClass: is-white
+---
+extends shared/_layout
+block content
+  
+  // SERVICE :: HERO
+  .hero.hero--black.hero--portfolio
+    .hero__waves
+      include ../inline-svg/heroWaves.svg
+    .container
+      .hero__wrapper
+        // PAGE TITLE
+        .hero__title.page-title.page-title--white
+          h1.page-title__main.wow Portfolio
+          .page-title__sub.wow(data-animation-delay='.2s') Die digitale Transformation ist überall im Munde. Wir helfen Ihnen dabei Ihre Prozesse, die rundum Ihres Produkt sind, zu verbessern und helfen bei der Schulung Ihrer Experten. 
+
+      
+  // PORFTOLIO CARDS    
+  .cards-grid.cards-grid--portfolio.wow(data-animation-delay=".35s")
+    .container
+      div(js-masonry)
+        // grid sizer is required for responsive masonry
+        .grid-sizer
+        a(href="case.html" js-modal-case).card.card--case
+          .card__bg
+            img(src='img/cardCase1.jpg' srcset='img/cardCase1@2x.jpg 2x')
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title Case
+              .card__desc.c-gray Coole App
+            .card__content-icon
+              +icon('ico-arrow')
+        //card
+        a(href="case.html" js-modal-case).card.card--case
+          .card__bg
+            img(src='img/cardCase2.jpg' srcset='img/cardCase2@2x.jpg 2x')
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title Case
+              .card__desc.c-gray YourWork
+            .card__content-icon
+              +icon('ico-arrow')
+        //card
+        a(href="case.html" js-modal-case).card.card--case
+          .card__bg
+            img(src='img/cardCase3.jpg' srcset='img/cardCase3@2x.jpg 2x')
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title Case
+              .card__desc.c-gray Ivonin Design
+            .card__content-icon
+              +icon('ico-arrow')
+        //card
+        a(href="case.html" js-modal-case).card.card--case
+          .card__bg
+            img(src='img/cardCase4.jpg' srcset='img/cardCase4@2x.jpg 2x')
+          .card__content.card__content--black.card__content--fixed
+            .card__content-wrap
+              .card__title Case
+              .card__desc.c-gray Golden Tulip Rosa Kh
+            .card__content-icon
+              +icon('ico-arrow')
+        //card
+        a(href="marketing.html").card
+          .card__bg
+            img(src='img/cardPerson1Bg.jpg' srcset='img/cardPerson1Bg@2x.jpg 2x')
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title Kontakte
+              .card__desc Ingmar Bergmann
+            .card__content-icon
+              +icon('ico-arrow')
+        
+        //card contact map
+        a(href="mailto:support@bergmann-infotech.de").card.card--contact
+          .card__bg
+            img(src='img/cardImpressiumBg.jpg' srcset='img/cardImpressiumBg@2x.jpg 2x')
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title Impressum
+              .card__desc support@bergmann-infotech.de
+            .card__content-icon
+              i.icon.icon-slack-grad    
+        //card
+        a(href="marketing.html").card
+          .card__bg
+            img(src='img/cardMarketingBg.png' srcset='img/cardMarketingBg@2x.png 2x')
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title <span>bit</span>.Marketing
+              .card__desc.c-white60  Wir machen die Marke bekannt
+            .card__content-icon
+              +icon('ico-arrow') 
+        //card
+        a(href="consulting.html").card.card--white-bg
+          .card__bg
+            img(src='img/cardConsultingBg.png' srcset='img/cardConsultingBg@2x.png 2x')
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__title.c-black <span>bit</span>.Consulting
+              .card__desc.c-gray Das Optimum zeigen
+            .card__content-icon.c-black
+              +icon('ico-arrow') 
+        //card contact map
+        a(href="contact.html").card.card--contact
+          .card__bg
+            img(src='img/cardMap1Bg.jpg' srcset='img/cardMap1Bg@2x.jpg 2x')
+          .card__content.card__content--fixed
+            .card__content-wrap
+              .card__desc Am Wallgraben 99, 70565 Stuttgart 
