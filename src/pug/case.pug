@@ -1,22 +1,21 @@
 ---
 title: CASE
+headerClass: is-hidden
 ---
 extends shared/_layout
 
-block header
-  
 block content
   
   // SERVICE :: HERO
   .hero.hero--black.hero--case
-    .hero__bg-image
+    .hero__bg-image.wow(data-animation-delay="1s" data-animation-class="wowBlur" data-animation-name="wowBlurUp")
       img(src='img/casePageBg.jpg' srcset='img/casePageBg@2x.jpg 2x')
       
     .hero__waves
       include ../inline-svg/heroWaves.svg
     .container
       .hero__wrapper
-        a.hero__close(href="portfolio.html" data-animation-delay="1.2s" data-animation-class="wowFadeRight").wow
+        a.hero__close(href="portfolio.html" data-animation-delay="1.5s" data-animation-class="wowFadeRight").wow
           +icon('ico-close')
         // PAGE TITLE
         .hero__title.page-title.page-title--white
@@ -26,16 +25,53 @@ block content
   // CASE CONTENT
   .case
     .container
+      // row
       .case__row
         .case__col
           .case__image
-            img(src='img/cases/caseImage1.jpg' srcset='img/cases/caseImage1@2x.jpg 2x')
+            img(data-src='img/cases/caseImage1.jpg' data-srcset='img/cases/caseImage1@2x.jpg 2x' js-lazy data-4-3)
         .case__col.case__col--bottom
           .case__image
-            img(src='img/cases/caseImage2.jpg' srcset='img/cases/caseImage2@2x.jpg 2x')
+            img(data-src='img/cases/caseImage2.jpg' data-srcset='img/cases/caseImage2@2x.jpg 2x' js-lazy data-4-3)
+      // row
+      .case__row
+        .case__col
+          .case__image
+            img(data-src='img/cases/caseImage3.jpg' data-srcset='img/cases/caseImage3@2x.jpg 2x' js-lazy data-4-3)
+          .case__image
+            img(data-src='img/cases/caseImage4.jpg' data-srcset='img/cases/caseImage4@2x.jpg 2x' js-lazy data-4-3)
+        .case__col
+          .case__image
+            img(data-src='img/cases/caseImage5.jpg' data-srcset='img/cases/caseImage5@2x.jpg 2x' js-lazy data-4-3)  
+      // row
+      .case__row
+        .case__col
+          .case__image
+            img(data-src='img/cases/caseImage6.jpg' data-srcset='img/cases/caseImage6@2x.jpg 2x' js-lazy data-4-3)
+        .case__col
+          .case__image
+            img(data-src='img/cases/caseImage7.jpg' data-srcset='img/cases/caseImage7@2x.jpg 2x' js-lazy data-4-3)
+          .case__image
+            img(data-src='img/cases/caseImage8.jpg' data-srcset='img/cases/caseImage8@2x.jpg 2x' js-lazy data-4-3)
+      // row
+      .case__row
+        .case__col
+          .case__image
+            img(data-src='img/cases/caseImage9.jpg' data-srcset='img/cases/caseImage9@2x.jpg 2x' js-lazy data-4-3)
+        .case__col
+          .case__image
+            img(data-src='img/cases/caseImage10.jpg' data-srcset='img/cases/caseImage10@2x.jpg 2x' js-lazy data-4-3)
+          .case__image
+            img(data-src='img/cases/caseImage11.jpg' data-srcset='img/cases/caseImage11@2x.jpg 2x' js-lazy data-4-3)
       
-
-  // PORFTOLIO CARDS    
+  // MORE CARDS TITLE
+  .more-cards
+    .container
+      // PAGE TITLE
+      .page-title.page-title--narrow
+        h2.page-title__main.wow Projekte
+        
+  // PORFTOLIO CARDS
   .cards-grid.wow(data-animation-delay=".35s")
     .container
       div(js-masonry)

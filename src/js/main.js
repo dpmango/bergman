@@ -66,6 +66,7 @@ $(document).ready(function(){
     initScrollMonitor();
     initMasks();
     initTeleport();
+    initLazyLoad();
 
     // parseSvg();
 
@@ -294,8 +295,9 @@ $(document).ready(function(){
 
   function parseSvg(){
     var _this = $('.header__logo svg');
-
-    addTransformOrigin(_this, 'logo-mark');
+    if ( _this.length > 0 ){
+      addTransformOrigin(_this, 'logo-mark');
+    }
   }
 
   function addTransformOrigin(target_el, target_class){
@@ -374,6 +376,40 @@ $(document).ready(function(){
   }
 
   //////////
+  // LAZY LOAD
+  //////////
+  function initLazyLoad(){
+    _document.find('[js-lazy]').Lazy({
+      threshold: 300,
+      scrollDirection: 'vertical',
+      effect: 'fadeIn',
+      effectTime: 500,
+      // visibleOnly: true,
+      // placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7...",
+      onError: function(element) {
+          console.log('error loading ' + element.data('src'));
+      },
+      beforeLoad: function(element){
+        // element.attr('style', '')
+      }
+    });
+  }
+
+  // wait till image is loaded
+  // var targetImage = $newContainer.find('.one-member__photo').find('[js-lazy]');
+  // var targetImageLazyInstance = targetImage.Lazy({
+  //   chainable: false,
+  //   afterLoad: function(element) {
+  //     var img = new Image();
+  //     img.onload = function() {
+  //       whenLazyLoaded();
+  //     };
+  //     img.src = element.attr('src');
+  //   }
+  // })
+  // targetImageLazyInstance.force(targetImage);
+
+  //////////
   // BARBA PJAX
   //////////
 
@@ -447,7 +483,7 @@ $(document).ready(function(){
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
     // update header class
     var newHeaderClass = $(newPageRawHTML).find('[js-headerClassToggler]').attr('class')
-    _document.find('.header').removeClass('is-white').addClass(newHeaderClass).addClass('is-back-visible');
+    _document.find('.header').removeClass('is-white').removeClass('is-hidden').addClass(newHeaderClass).addClass('is-back-visible');
 
     // populate back-link
     _document.find('.header__back').attr('href', Barba.HistoryManager.prevStatus().url)

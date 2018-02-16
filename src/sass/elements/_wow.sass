@@ -21,6 +21,11 @@
 .wowFadeRight
   transform: translate3d(20px, 0px, 0)
 
+@keyframes wowFade
+  to
+    opacity: 1
+    transform: translate3d(0, 0, 0)
+
 .wowFadeCircle
   animation-fill-mode: forwards
   animation-timing-function: easeInOutQuint
@@ -31,7 +36,12 @@
   to
     transform: translate3d(8.5%,-45%,0)
 
-@keyframes wowFade
+.wowBlur
+  animation-fill-mode: forwards
+  animation-timing-function: ease-in
+  animation-duration: 0.3s
+  filter: blur(15px)
+
+@keyframes wowBlurUp
   to
-    opacity: 1
-    transform: translate3d(0, 0, 0)
+    filter: blur(0px)

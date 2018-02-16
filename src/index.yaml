@@ -18,7 +18,7 @@ PageList:
 - file: portfolio.html
   ready: 50
 - file: case.html
-  ready: 20
+  ready: 50
 - file: events.html
   ready: 0
 - file: contacts.html

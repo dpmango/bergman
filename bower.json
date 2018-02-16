@@ -25,6 +25,7 @@
     "scrollMonitor": "^1.2.4",
     "barba.js": "luruke/barba.js#^1.0.0",
     "masonry-layout": "masonry#^4.2.1",
-    "animejs": "^2.2.0"
+    "animejs": "^2.2.0",
+    "jquery-lazy": "^1.7.7"
   }
 }
