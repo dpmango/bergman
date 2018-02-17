@@ -97,33 +97,30 @@
           padding-bottom: 0
   &--case
     box-shadow: none
-    
+
+  &--mailer, &--mailer-black
+    width: 310px
+    margin-top: 30px
+    background-size: 230% 100%
+    .card__content
+      color: white
+    &:hover
+      margin-top: 30px
+      background-position: 100% 100%
+      .card__content-icon
+        filter: brightness(0) invert(100%)
+      // background-image: linear-gradient(25deg, #3CAAC4 0%, #7CD2E6 56%, #B4EC51 100%)
   &--mailer
-    width: 310px
-    margin-top: 30px
     background-image: linear-gradient(134deg, #3023AE 0%, #C86DD7 50%, #3CAAC4 50%, #7CD2E6 78%, #B4EC51 100%)
-    background-size: 230% 100%
-    .card__content
-      color: white
-    &:hover
-      margin-top: 30px
-      background-position: 100% 100%
-      .card__content-icon
-        filter: brightness(0) invert(100%)
-      // background-image: linear-gradient(25deg, #3CAAC4 0%, #7CD2E6 56%, #B4EC51 100%)
-  &--mailer-black
+    &-black
+      background-image: linear-gradient(134deg, #292A2C 0%, #292A2C 50%, #3CAAC4 50%, #7CD2E6 78%, #B4EC51 100%)
+
+  &--mailer-white
     width: 310px
-    margin-top: 30px
-    background-image: linear-gradient(134deg, #292A2C 0%, #292A2C 50%, #3CAAC4 50%, #7CD2E6 78%, #B4EC51 100%)
-    background-size: 230% 100%
-    .card__content
-      color: white
+    margin-top: 20px
+    background-image: linear-gradient(-134deg, #F5FBFD 0%, #FFFFFF 100%)
     &:hover
-      margin-top: 30px
-      background-position: 100% 100%
-      .card__content-icon
-        filter: brightness(0) invert(100%)
-      // background-image: linear-gradient(25deg, #3CAAC4 0%, #7CD2E6 56%, #B4EC51 100%)
+      margin-top: 20px
 
 +r(1200)
   .grid-sizer

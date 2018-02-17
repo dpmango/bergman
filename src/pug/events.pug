@@ -1,0 +1,39 @@
+---
+title: Events
+headerClass: is-white
+---
+extends shared/_layout
+block content
+  
+  // SERVICE :: HERO
+  .hero.hero--blue-bg
+    .hero__waves
+      include ../inline-svg/heroWaves.svg
+    .container
+      .hero__wrapper
+        // PAGE TITLE
+        .hero__title.page-title.page-title--white
+
+
+  // SERVICE :: CONTENT
+  .service-content
+    .container
+      .list-row
+        // list el
+        .list-el.wow(data-animation-delay=".2s")
+          .list-heading
+            .list-heading__num 01
+            .list-heading__name Geschichte
+          p Bergmann Infotech wurde 1994 in Leipzig gegründet. Mit einem Geschäftsführerwechsel und einer neuen Niederlassung wurde die Firma Anfang 2017 umstrukturiert. Zusätzlich kamen neue Geschäftsfelder hinzu. 
+          p Das gesamte Team verfügt über jahrelange Erfahrung in der Softwareentwicklung. Von dem Design und Beratung über das Produktmanagement bis hin zur Konzeption, UX/UI und Entwicklung.
+
+        // list el
+        .list-el.wow(data-animation-delay=".2s")
+          .list-heading
+            .list-heading__num 02
+            .list-heading__name Philosophy
+          p Jede Idee braucht einen bestimmten Rhythmus. Damit der Rhythmus von Anfang bis Ende erfolgreich im Einklang bleibt, haben wir uns spezialisiert - von der Projektkonzeption über die Umsetzung  bis hin zum  Betrieb. 
+          p Wir spalten Ihre Herausforderung zu vielen kleinen Herausforderungen für das Team auf.  Lass jedem den Rhythmus spüren!
+
+            
+  include components/_services-bottom

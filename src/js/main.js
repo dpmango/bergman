@@ -1,5 +1,10 @@
 $(document).ready(function(){
 
+  // HANDCRAFTED FRONT-END WITH LOVE
+  // by KHMELEVSKOY & ASSOCIATES <sergey@khmelevskoy.co>
+  // by request from bofer.ru
+  // for Bergmann Infotech GmbH
+
   //////////
   // Global variables
   //////////
@@ -52,7 +57,6 @@ $(document).ready(function(){
     wide: 1336,
     hd: 1680
   }
-
 
   ////////////
   // READY - triggered when PJAX DONE
@@ -116,24 +120,29 @@ $(document).ready(function(){
   // to disable sticky header
   function initHeaderScroll(){
     if ( $('.header-static').length == 0 ){
-      _window.on('scroll', throttle(function() {
+      var lastTop = 0;
+      _window.on('scroll', throttle(function(e) {
         var vScroll = _window.scrollTop();
         var header = $('.header').not('.header--static');
         var headerHeight = header.height();
-        var heroHeight = $('.hero').outerHeight() - headerHeight;
-        // probably should be found as a first child of page contents
+        var firstSection = _document.find('.page__content div:first-child()').height() - headerHeight;
+        var visibleWhen = Math.floor(_document.height() / _window.height()) >  2.5
 
-        if ( vScroll > headerHeight ){
-          header.addClass('header--transformed');
-        } else {
-          header.removeClass('header--transformed');
+        if (visibleWhen){
+          if ( vScroll > headerHeight ){
+            header.addClass('is-fixed');
+          } else {
+            header.removeClass('is-fixed');
+          }
+          if ( vScroll > firstSection ){
+            header.addClass('is-fixed-visible');
+          } else {
+            header.removeClass('is-fixed-visible');
+          }
         }
 
-        if ( vScroll > heroHeight ){
-          header.addClass('header--fixed');
-        } else {
-          header.removeClass('header--fixed');
-        }
+        lastTop = vScroll
+
       }, 10));
     }
   }
@@ -380,10 +389,12 @@ $(document).ready(function(){
   //////////
   function initLazyLoad(){
     _document.find('[js-lazy]').Lazy({
-      threshold: 300,
+      threshold: 500,
+      enableThrottle: true,
+      throttle: 100,
       scrollDirection: 'vertical',
       effect: 'fadeIn',
-      effectTime: 500,
+      effectTime: 350,
       // visibleOnly: true,
       // placeholder: "data:image/gif;base64,R0lGODlhEALAPQAPzl5uLr9Nrl8e7...",
       onError: function(element) {

@@ -6,6 +6,7 @@
   left: 0
   z-index: 10
   background: transparent
+  // transition: .25s $ease
   &__wrapper
     display: flex
     align-items: center
@@ -35,6 +36,7 @@
     // posr is for header back
     font-size: 35px
     padding-right: 30px
+    font-size: 0
     svg
       width: 100%
       overflow: visible
@@ -103,6 +105,20 @@
     visibility: hidden !important
     pointer-events: none
 
+  &.is-fixed
+    transform: translate3d(0,-100%,0)
+    background-image: linear-gradient(-134deg, #3023AE 0%, #8A4FC6 59%, #C86DD7 100%)
+    box-shadow: 0 15px 15px 0 rgba(0,0,0,0.12)
+    transition: .25s $ease
+    .header__wrapper
+      padding-top: 24px
+      padding-bottom: 20px
+    .header__logo
+      flex: 0 0 169px
+
+  &.is-fixed-visible
+    position: fixed
+    transform: translate3d(0,0,0)
 
 +r($desktop)
   .header

@@ -20,10 +20,10 @@ PageList:
 - file: case.html
   ready: 50
 - file: events.html
-  ready: 0
+  ready: 20
 - file: contacts.html
-  ready: 0
+  ready: 20
 - file: karriere.html
-  ready: 0
+  ready: 50
 - file: purposal.html
-  ready: 0
+  ready: 20

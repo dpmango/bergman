@@ -1,0 +1,78 @@
+---
+title: Karriere
+headerClass: is-white
+---
+extends shared/_layout
+block content
+  
+  // SERVICE :: HERO
+  .hero.hero--black
+    .hero__bg-image.wow(data-animation-delay="1s" data-animation-class="wowBlur" data-animation-name="wowBlurUp")
+      img(src='img/karrierePageBg.jpg' srcset='img/karrierePageBg@2x.jpg 2x')
+    .hero__waves
+      include ../inline-svg/heroWaves.svg
+    .container
+      .hero__wrapper
+        // PAGE TITLE
+        .hero__title.page-title.page-title--white
+          h1.page-title__main.wow Karriere
+          .page-title__sub.wow(data-animation-delay='.2s') Reaktionen verringern und mehr Zeit gewinnen...
+
+
+  // SERVICE :: CONTENT
+  .service-content
+    .container
+      .list-row
+        // list el
+        .list-el.wow(data-animation-delay=".2s")
+          .list-heading
+            .list-heading__num 01
+            .list-heading__name bit.Design sucht Senior Art Director <br> in Stuttgart		
+          p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et…
+          .list-more 
+            span Mehr lesen ►
+          //card contact
+          a(href="mailto:support@bergmann-infotech.de" data-animation-delay=".4s").card.card--contact.card--mailer-white.wow
+            .card__content
+              .card__content-wrap
+                .card__title Quick Bewerbung
+                .card__desc.c-gray Bewirb Dich heute noch
+              .card__content-icon
+                i.icon.icon-email-grad
+        
+        // list el
+        .list-el.wow(data-animation-delay=".2s")
+          .list-heading
+            .list-heading__num 02
+            .list-heading__name bit.Development sucht Senior Java Entwickler <br> in Stuttgart	
+          p Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et…
+          .list-more 
+            span Mehr lesen ►
+          //card contact
+          a(href="mailto:support@bergmann-infotech.de" data-animation-delay=".4s").card.card--contact.card--mailer-white.wow
+            .card__content
+              .card__content-wrap
+                .card__title Quick Bewerbung
+                .card__desc.c-gray Bewirb Dich heute noch
+              .card__content-icon
+                i.icon.icon-email-grad
+
+        // list el
+        .list-el.wow(data-animation-delay=".2s")
+          .list-heading
+            .list-heading__num 03
+            .list-heading__name bit.Design sucht Senior Art Director <br> in Stuttgart	
+          p Diese Tools verwenden wir täglich für eure Projekte.
+          .list-more 
+            span Mehr lesen ►
+          //card contact
+          a(href="mailto:support@bergmann-infotech.de" data-animation-delay=".4s").card.card--contact.card--mailer-white.wow
+            .card__content
+              .card__content-wrap
+                .card__title Quick Bewerbung
+                .card__desc.c-gray Bewirb Dich heute noch
+              .card__content-icon
+                i.icon.icon-email-grad
+
+
+  include components/_services-bottom

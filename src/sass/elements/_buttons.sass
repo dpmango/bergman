@@ -82,6 +82,22 @@ button
       &__numbers
         color: white
 
+.header.is-fixed
+  .b-phone
+    &::after
+      size: 45px
+    &__numbers
+      padding-right: 55px
+      color: white
+      &::after
+        display: none
+    &__icon
+      min-size: 45px
+    &:hover
+      &::after
+        width: 100%
+        box-shadow: none
+
 +r(440)
   .b-phone
     &::after
