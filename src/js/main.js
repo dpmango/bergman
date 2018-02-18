@@ -237,15 +237,31 @@ $(document).ready(function(){
 
   });
 
+  // FLOATING LABELS
+  // focus in
+  _document.on('focus', '.ui-input-dynamic', function(){
+    $(this).addClass('is-focused');
+  })
+
+  // focus out
+  _document.on('blur', '.ui-input-dynamic', function(){
+    var thisVal = $(this).find('input, textarea').val();
+    if ( thisVal !== "" ){
+      $(this).addClass('is-focused');
+    } else {
+      $(this).removeClass('is-focused');
+    }
+  })
+
   // textarea autoExpand
   _document
-    .one('focus.autoExpand', '.ui-group textarea', function(){
+    .one('focus.autoExpand', '.js-autoExpand', function(){
         var savedValue = this.value;
         this.value = '';
         this.baseScrollHeight = this.scrollHeight;
         this.value = savedValue;
     })
-    .on('input.autoExpand', '.ui-group textarea', function(){
+    .on('input.autoExpand', '.js-autoExpand', function(){
         var minRows = this.getAttribute('data-min-rows')|0, rows;
         this.rows = minRows;
         rows = Math.ceil((this.scrollHeight - this.baseScrollHeight) / 17);

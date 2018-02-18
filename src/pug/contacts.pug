@@ -7,9 +7,6 @@ block content
   
   // SERVICE :: HERO
   .hero.hero--black
-    //- .hero__bg-image.wow(data-animation-delay="1s" data-animation-class="wowBlur" data-animation-name="wowBlurUp")
-    //-   img(src='img/casePageBg.jpg' srcset='img/casePageBg@2x.jpg 2x')
-    .hero__circle.wow(data-animation-delay=".5s" data-animation-class="wowFadeCircle" data-animation-name="wowMove")
     .hero__waves
       include ../inline-svg/heroWaves.svg
     .container
@@ -20,7 +17,38 @@ block content
           .page-title__sub.wow(data-animation-delay='.2s') Reaktionen verringern und mehr Zeit gewinnen...
 
         .hero__image.wow(data-animation-delay=".8s")
-          include ../inline-svg/min/heroSupport.svg
+          // map
+  
+  // CONTACT
+  .contact
+    .container
+      .contact__wrapper
+        .contact-form
+          .contact-form__head
+            .contact-form__title Jetzt kontaktieren
+            .contact-form__subtitle Schreiben Sie Ihren Anliegen
+            .contact-form__head-icon
+              +icon('ico-contact-box')
+          .contact-form__content
+            form(action="#")
+              .ui-input-dynamic
+                label Vorname und Nachname
+                input(type="text" name="name")
+              .ui-input-dynamic
+                label Ihre E-Mail
+                input(type="email" name="email")
+              .ui-input-dynamic
+                label Schreiben Sie Ihren Anliegen
+                textarea(name="text" rows="6" data-min-rows="6").js-autoExpand   
+              .contact-form__cta
+                button(type="submit").card.card--contact.card--mailer-black
+                  .card__content
+                    .card__content-wrap
+                      .card__title Anfrage schicken
+                      .card__desc.c-white60 Kotenlose Beratung anfordern
+                    .card__content-icon
+                      i.icon.icon-email-grad
+
 
 
   include components/_services-bottom

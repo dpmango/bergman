@@ -20,6 +20,52 @@
   textarea
     resize: vertical
 
+.ui-input-dynamic
+  position: relative
+  padding-top: 15px
+  padding-bottom: 20px
+  margin-bottom: 15px
+  // top for focused state
+  // bottom is for error state
+  label
+    position: absolute
+    left: 0
+    top: 28px
+    font-size: 14px
+    font-weight: 400
+    color: #AEB3B8
+    transition: .25s $ease
+  input, textarea
+    display: block
+    width: 100%
+    -webkit-apperance: none
+    border: 0
+    border-bottom: 1px solid #7B7F84
+    padding: 10px 0
+    color: $fontColor
+    background: transparent
+    border-radius: 0
+  textarea
+    resize: vertical
+  &::after
+    display: inline-block
+    content: ' '
+    position: absolute
+    bottom: 19px
+    left: 0
+    right: 100%
+    height: 3px
+    background-image: linear-gradient(134deg, #3023AE 0%, #C86DD7 100%)
+    transition: .25s $ease
+  &.is-focused
+    label
+      font-size: 12px
+      transform: translate3d(0,-23px,0)
+
+    &::after
+      right: 0
+
+
 
 // Checkbox
 .ui-checkbox

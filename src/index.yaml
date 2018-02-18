@@ -22,7 +22,7 @@ PageList:
 - file: events.html
   ready: 20
 - file: contacts.html
-  ready: 20
+  ready: 40
 - file: karriere.html
   ready: 50
 - file: purposal.html
