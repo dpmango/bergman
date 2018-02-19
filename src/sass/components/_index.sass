@@ -66,33 +66,60 @@
       &__sub
         color: rgba(white, .5)
 
++r($wide)
+  .page-title
+    &--white
+      .page-title
+        &__main
+          font-size: 60px
+        &__sub
+          font-size: 18px
+
 +r($desktop)
   .page-title
     &__main
       font-size: 60px
     &__sub
       font-size: 18px
+    &--white
+      max-width: 550px
+
 +r($tablet)
   .page-title
     &__main
       font-size: 45px
     &__sub
       font-size: 16px
+    &--white
+      .page-title
+        &__main
+          font-size: 45px
+        &__sub
+          font-size: 16px
 
 +r($mobile)
   .page-title
     &__main
       font-size: 38px
+    &--white
+      .page-title__main
+        font-size: 38px
 
 +r(414)
   .page-title
     &__main
       font-size: 31px
+    &--white
+      .page-title__main
+        font-size: 31px
 
 +r($mobile-s)
   .page-title
     &__main
       font-size: 28px
+    &--white
+      .page-title__main
+        font-size: 28px
 
 // GENERAL COLOR MODS
 .c-gray

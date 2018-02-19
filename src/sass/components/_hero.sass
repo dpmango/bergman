@@ -45,6 +45,7 @@
     size: 910px
     z-index: 1
     // transform: translate3d(8.5%,-45%,0)
+    transform: translate3d(8.5%,-45%,0)
     background-image: linear-gradient(134deg, #F5FBFD 0%, #FFFFFF 100%)
     border-radius: 50%
   &__waves
@@ -79,14 +80,31 @@
       svg
         transform: scale(1.3) rotate(180deg)
 
++r($wide)
+  .hero
+    &__circle
+      size: 82vw
+      transform: translate3d(15vw,-35vw,0)
 
 +r($desktop)
   .hero
     &__wrapper
       flex-direction: column-reverse
+      align-items: flex-start
+    &__circle
+      display: none
 
     &__title
       flex: 0 0 auto
+      margin-bottom: 50px
     &__image
       flex: 0 0 auto
+      margin-left: auto
+      margin-right: auto
+      margin-top: 80px
       margin-bottom: 50px
+
++r($mobile)
+  .hero
+    &__title
+      margin-bottom: 0

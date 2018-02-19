@@ -35,6 +35,10 @@
     flex: 0 0 auto
     margin-bottom: 40px
 
+.service-content
+  position: relative
+  z-index: 5
+  background: #F5FBFD
 
 .list-heading
   font-family: $monster
@@ -149,3 +153,75 @@
     font-size: 16px
     color: $colorGray
     line-height: 1.56
+
++r($wide)
+  .contact-person
+    &__bg
+      min-width: 1200px
+    &__name
+      font-size: 54px
+    &__desc
+      font-size: 15px
+
++r($desktop)
+  .contact-person
+    &__wrapper
+      margin-left: 40%
+      &--left
+        margin-left: 0
+    &__bg
+      margin-left: -100px
+      &--right
+        margin-left: -150px
+    &__name
+      font-size: 50px
+    &__desc
+      margin-top: 15px
+      font-size: 14px
+
++r($tablet)
+  .contact-person
+    &__bg
+      min-width: 992px
+    &__wrapper
+      margin-left: 20%
+      .card
+        float: right
+      &--left
+        margin-left: 0
+        .contact-person__name
+          text-align: left
+        .contact-person__desc
+          text-align: left
+        .card
+          float: none
+
+    &__name
+      text-align: right
+      font-size: 42px
+    &__desc
+      text-align: right
+      margin-left: auto
+      max-width: 400px
+
++r($mobile)
+  .contact-person
+    &__bg
+      min-width: 900px
+      margin-left: -150px
+      &--right
+        margin-left: -250px
+    &__name
+      font-size: 34px
+    &__desc
+      font-size: 13px
+
++r(414)
+  .contact-person
+    &__bg
+      &--right
+        margin-left: -300px
+    &__name
+      font-size: 30px
+    &__desc
+      font-size: 12px
