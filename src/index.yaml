@@ -16,9 +16,9 @@ PageList:
 - file: consulting.html
   ready: 85
 - file: portfolio.html
-  ready: 50
+  ready: 70
 - file: case.html
-  ready: 50
+  ready: 85
 - file: events.html
   ready: 20
 - file: contacts.html

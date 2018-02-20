@@ -1,6 +1,8 @@
 /* HERO
 .hero
   position: relative
+  overflow: hidden
+
   &--purple-bg
     background-image: linear-gradient(134deg, #3023AE 0%, #8A4FC6 59%, #C86DD7 100%)
   &--blue-bg
@@ -12,13 +14,19 @@
     background-repeat: no-repeat, no-repeat
     background-position: 80% top, center
     background-size: cover, cover
-  &--case
     .hero__wrapper
-      align-items: flex-start
+      padding-bottom: 120px
+      min-height: 630px
+    .hero__title
+      max-width: 595px
+  &--case
+    .hero__title
+      padding-top: 0px
+      margin-top: -10px
 
   &__wrapper
     display: flex
-    align-items: center
+    align-items: flex-start
     padding-top: 50px
     padding-bottom: 60px
     min-height: 560px
@@ -28,6 +36,7 @@
     z-index: 3
 
   &__title
+    padding-top: 130px
     flex: 0 1 50%
     &--wide
       flex-basis: 80%
@@ -62,7 +71,9 @@
   &__bg-image
     position: absolute 0
     img
-      max-width: 100%
+      z-index: 1
+      min-width: 100%
+      min-height: 100%
   &__close
     position: absolute
     top: 50px
@@ -91,11 +102,13 @@
     &__wrapper
       flex-direction: column-reverse
       align-items: flex-start
+      justify-content: flex-end
     &__circle
       display: none
 
     &__title
       flex: 0 0 auto
+      padding-top: 0
       margin-bottom: 50px
     &__image
       flex: 0 0 auto
@@ -104,7 +117,25 @@
       margin-top: 80px
       margin-bottom: 50px
 
++r($tablet)
+  .hero
+    &--case
+      .hero__title
+        padding-right: 50px
+
+
 +r($mobile)
   .hero
     &__title
       margin-bottom: 0
+    &__close
+      position: absolute
+      top: 60px
+      right: 30px
+      size: 45px
+      font-size: 16px
+    &__wrapper
+      min-height: 480px
+    &--case
+      .hero__title
+        margin-top: 10px
