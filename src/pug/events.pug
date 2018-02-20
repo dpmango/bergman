@@ -1,24 +1,25 @@
 ---
 title: Events
-headerClass: is-white
+headerClass: is-blue
 ---
 extends shared/_layout
 block content
   
   // SERVICE :: HERO
-  .hero.hero--blue-bg
+  .hero
+    .hero__bg-image.wow(data-animation-delay=".5s" data-animation-class="wowBlur" data-animation-name="wowBlurUp")
+      img(src='img/pageEventsBg.jpg' srcset='img/pageEventsBg@2x.jpg 2x')
+    
     .hero__waves
       include ../inline-svg/heroWaves.svg
     .container
       .hero__wrapper
-        // PAGE TITLE
-        .hero__title.page-title.page-title--white
-
+        // emtpy wrapper just to keep space
 
   // SERVICE :: CONTENT
   .service-content
     .container
-      .list-row
+      .list-row.list-row--no-pad
         // list el
         .list-el.wow(data-animation-delay=".2s")
           .list-heading

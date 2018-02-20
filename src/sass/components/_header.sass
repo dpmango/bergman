@@ -83,7 +83,7 @@
   &__phone
     margin-left: 30px
 
-  &.is-white
+  &.is-white, &.is-blue
     .header__logo
       .logo-mark
         fill: white
@@ -95,6 +95,16 @@
       &__numbers
         &::after
           box-shadow: 0 22px 22px 0 rgba(0,0,0,0.12)
+  &.is-blue
+    .header__lang
+      a
+        color: rgba(white, .5)
+        &.is-active
+          color: white
+
+    .b-phone
+      &::after
+        background-image: linear-gradient(134deg, #3023AE 0%, #C86DD7 100%)
 
   &.is-back-visible
     .header__back
@@ -110,6 +120,9 @@
     background-image: linear-gradient(-134deg, #3023AE 0%, #8A4FC6 59%, #C86DD7 100%)
     box-shadow: 0 15px 15px 0 rgba(0,0,0,0.12)
     transition: .25s $ease
+    &.is-blue
+      background-image: linear-gradient(39deg, #3CAAC4 -10%, #57D4E9 59%, #A1F01F 120%)
+
     .header__wrapper
       padding-top: 24px
       padding-bottom: 20px

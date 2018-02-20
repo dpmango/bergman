@@ -20,7 +20,7 @@ PageList:
 - file: case.html
   ready: 85
 - file: events.html
-  ready: 20
+  ready: 70
 - file: contacts.html
   ready: 40
 - file: karriere.html
