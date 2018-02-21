@@ -65,6 +65,8 @@ $(document).ready(function(){
     legacySupport();
 
     initHeaderScroll();
+    _window.on('scroll', throttle(initHeaderScroll, 10))
+    _window.on('resize', debounce(initHeaderScroll, 200))
 
     initPopups();
     initScrollMonitor();
@@ -119,33 +121,36 @@ $(document).ready(function(){
   // HEADER SCROLL
   // add .header-static for .page or body
   // to disable sticky header
+  var pastScroll = 0;
   function initHeaderScroll(){
-    if ( $('.header-static').length == 0 ){
-      var lastTop = 0;
-      _window.on('scroll', throttle(function(e) {
-        var vScroll = _window.scrollTop();
-        var header = $('.header').not('.header--static');
-        var headerHeight = header.height();
-        var firstSection = _document.find('.page__content div:first-child()').height() - headerHeight;
-        var visibleWhen = Math.floor(_document.height() / _window.height()) >  2.5
+    var vScroll = _window.scrollTop();
+    var header = $('.header').not('.header--static');
+    var headerHeight = header.height();
+    var firstSection = _document.find('.page__content div:first-child()').height() - headerHeight;
+    var visibleWhen = Math.floor(_document.height() / _window.height()) >  2.5
 
-        if (visibleWhen){
-          if ( vScroll > headerHeight ){
-            header.addClass('is-fixed');
-          } else {
-            header.removeClass('is-fixed');
-          }
-          if ( vScroll > firstSection ){
-            header.addClass('is-fixed-visible');
-          } else {
-            header.removeClass('is-fixed-visible');
-          }
-        }
-
-        lastTop = vScroll
-
-      }, 10));
+    if ( pastScroll > vScroll ){
+      header.addClass('is-scrolling-top');
+      console.log('is scrolling top')
+    } else {
+      header.removeClass('is-scrolling-top');
     }
+    if (visibleWhen){
+      if ( vScroll > headerHeight ){
+        header.addClass('is-fixed');
+      } else {
+        header.removeClass('is-fixed');
+      }
+      if ( vScroll > firstSection ){
+        header.addClass('is-fixed-visible');
+      } else {
+        header.removeClass('is-fixed-visible');
+      }
+    } else {
+      header.removeClass('is-fixed-visible').removeClass('is-fixed');
+    }
+
+    pastScroll = vScroll
   }
 
 

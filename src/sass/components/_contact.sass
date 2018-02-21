@@ -93,21 +93,29 @@
   overflow: hidden
   pointer-events: none
   > div
+    position: relative
     width: 100%
     height: 102%
     pointer-events: all
     clip-path: circle(50% at 50% 50%)
     -webkit-clip-path: circle(50% at 50% 50%)
 
++r($wide)
+  .contact-map
+    size: 73vw
+    transform: translate3d(15vw,-35vw,0)
+
 +r($desktop)
   .contact-content
     padding-left: 50px
+
 
 +r(850)
   .contact
     &__wrapper
       flex-direction: column
-
+  .contact-map
+    display: none
   .contact-form
     flex: 0 0 auto
     width: 100%

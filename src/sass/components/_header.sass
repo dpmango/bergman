@@ -127,12 +127,31 @@
     .header__wrapper
       padding-top: 24px
       padding-bottom: 20px
+    // copy styles for white shadow and logo
     .header__logo
       flex: 0 0 169px
+      .logo-mark
+        fill: white
+      .logo-letters
+        fill: white
+      .b-phone
+        &::after
+          box-shadow: 0 22px 22px 0 rgba(0,0,0,0.12)
+        &__numbers
+          &::after
+            box-shadow: 0 22px 22px 0 rgba(0,0,0,0.12)
+    .header__lang
+      a
+        color: rgba(white, .5)
+        &.is-active
+          color: white
+
 
   &.is-fixed-visible
     position: fixed
     transform: translate3d(0,0,0)
+    &.is-scrolling-top
+      top: -75px
 
 +r($desktop)
   .header
