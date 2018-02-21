@@ -1,10 +1,19 @@
 $sprite: (
+	check: (
+		offset-x: -77px,
+		offset-y: -22px,
+		width: 9px,
+		height: 9px,
+		total-width: 90px,
+		total-height: 66px,
+		image: '../img/sprite.png'
+	),
 	email-grad: (
 		offset-x: 0px,
 		offset-y: 0px,
 		width: 31px,
 		height: 31px,
-		total-width: 67px,
+		total-width: 90px,
 		total-height: 66px,
 		image: '../img/sprite.png'
 	),
@@ -13,7 +22,7 @@ $sprite: (
 		offset-y: -41px,
 		width: 20px,
 		height: 20px,
-		total-width: 67px,
+		total-width: 90px,
 		total-height: 66px,
 		image: '../img/sprite.png'
 	),
@@ -22,7 +31,16 @@ $sprite: (
 		offset-y: -41px,
 		width: 25px,
 		height: 25px,
-		total-width: 67px,
+		total-width: 90px,
+		total-height: 66px,
+		image: '../img/sprite.png'
+	),
+	selectric: (
+		offset-x: -77px,
+		offset-y: 0px,
+		width: 13px,
+		height: 12px,
+		total-width: 90px,
 		total-height: 66px,
 		image: '../img/sprite.png'
 	),
@@ -31,7 +49,7 @@ $sprite: (
 		offset-y: 0px,
 		width: 26px,
 		height: 26px,
-		total-width: 67px,
+		total-width: 90px,
 		total-height: 66px,
 		image: '../img/sprite.png'
 	),
@@ -91,6 +109,9 @@ $sprite: (
 
 
 
+	.icon-check {
+		@include sprite(check)
+	}
 	.icon-email-grad {
 		@include sprite(email-grad)
 	}
@@ -99,6 +120,9 @@ $sprite: (
 	}
 	.icon-phone-grad {
 		@include sprite(phone-grad)
+	}
+	.icon-selectric {
+		@include sprite(selectric)
 	}
 	.icon-slack-grad {
 		@include sprite(slack-grad)

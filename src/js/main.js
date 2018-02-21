@@ -69,6 +69,7 @@ $(document).ready(function(){
     initPopups();
     initScrollMonitor();
     initMasks();
+    initSelects();
     initTeleport();
     initLazyLoad();
 
@@ -208,34 +209,11 @@ $(document).ready(function(){
   // UI
   ////////////
 
-  // custom selects
-  _document.on('click', '.ui-select__visible', function(e){
-    var that = this
-    // hide parents
-    $(this).parent().parent().parent().find('.ui-select__visible').each(function(i,val){
-      if ( !$(val).is($(that)) ){
-        $(val).parent().removeClass('active')
-      }
+  function initSelects(){
+    $('[js-selectric]').selectric({
+      maxHeight: 300
     });
-
-    $(this).parent().toggleClass('active');
-  });
-
-  _document.on('click', '.ui-select__dropdown span', function(){
-    // parse value and toggle active
-    var value = $(this).data('val');
-    if (value){
-      $(this).siblings().removeClass('active');
-      $(this).addClass('active');
-
-      // set visible
-      $(this).closest('.ui-select').removeClass('active');
-      $(this).closest('.ui-select').find('input').val(value);
-
-      $(this).closest('.ui-select').find('.ui-select__visible span').text(value);
-    }
-
-  });
+  }
 
   // FLOATING LABELS
   // focus in
@@ -270,8 +248,7 @@ $(document).ready(function(){
 
   // Masked input
   function initMasks(){
-    $("[js-dateMask]").mask("99.99.99",{placeholder:"ДД.ММ.ГГ"});
-    $("input[type='tel']").mask("+7 (000) 000-0000", {placeholder: "+7 (___) ___-____"});
+    $("input[type='tel']").mask("000 00000-000");
   }
 
 
@@ -510,7 +487,7 @@ $(document).ready(function(){
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
     // update header class
     var newHeaderClass = $(newPageRawHTML).find('[js-headerClassToggler]').attr('class')
-    _document.find('.header').removeClass('is-white').removeClass('is-hidden').addClass(newHeaderClass).addClass('is-back-visible');
+    _document.find('.header').removeClass('is-white, is-blue, is-black-fixed, is-fixed-visible, is-fixed, is-hidden').addClass(newHeaderClass).addClass('is-back-visible');
 
     // populate back-link
     _document.find('.header__back').attr('href', Barba.HistoryManager.prevStatus().url)

@@ -1,6 +1,6 @@
 ---
 title: Purposal
-headerClass: is-white
+headerClass: is-white is-black-fixed
 ---
 extends shared/_layout
 block content
@@ -15,11 +15,75 @@ block content
         .hero__title.hero__title--wide.page-title.page-title--white
           h1.page-title__main.wow bit.Design sucht Senior Art Director in Stuttgart
 
+  // CONTACT
+  .purposal
+    .container
+      .purposal__wrapper
+        form(action="#").purposal-form
+          .purposal-form__row
+            // col
+            .purposal-form__col
+              .purposal-form__head
+                .purposal-form__title Ich bewerbe mich bei
+                .purposal-form__position bit.Design
+              .ui-group
+                label Anrede
+                .ui-checkbox-row
+                  .ui-checkbox
+                    input(type="checkbox" id="gender_1")
+                    label(for="gender_1")
+                      span Herr
+                  .ui-checkbox
+                    input(type="checkbox" id="gender_2")
+                    label(for="gender_2")
+                      span Frau  
+                      
+              .ui-input-dynamic
+                label Ihre E-Mail
+                input(type="email" name="email")
+          
+            // col
+            .purposal-form__col
+              .ui-group
+                select(js-selectric)
+                  option bit.Design
+                  option bit.Marketing
+                  option bit.Development
+                  option bit.Support
+                  option bit.Consulting
+                  option bit.Operation
+                  
+              .ui-input-dynamic
+                label Vorname und Nachname
+                input(type="text" name="name")
+              .ui-input-dynamic
+                label Telefon
+                input(type="tel" name="phone")
 
+          .ui-input-dynamic.ui-input-dynamic--two-labels
+            label.label-fade Label message after placeholder removal
+            label Du bist einzigartig, toll und einfach wunderbar und willst unbedingt bei uns arbeiten? Dann schreib uns kurz was dich besonders macht und wieso auch du uns kennenlernen willst. Wir freuen uns auch über Links zu deinen Profilen auf Xing, LinkedIn und Co. Say Servus!
+            textarea(name="text" rows="6" data-min-rows="6").js-autoExpand   
+          
+          .ui-group.purposal-form__agree
+            .ui-checkbox
+              input(type="checkbox" id="agree" checked)
+              label(for="agree")
+                span Ich akzeptiere die elektronische Speicherung meiner Daten gemäß den Datenschutzbestimmungen.*  
+                
+          .purposal-form__cta
+            button(type="submit").card.card--contact.card--mailer-black
+              .card__content
+                .card__content-wrap
+                  .card__title Anfrage schicken
+                  .card__desc.c-white60 Kotenlose Beratung anfordern
+                .card__content-icon
+                  i.icon.icon-email-grad
+                        
   // SERVICE :: CONTENT
   .service-content
     .container
-      .list-row
+      .list-row.list-row--no-pad
         // list el
         .list-el.wow(data-animation-delay=".2s")
           .list-heading
