@@ -23,6 +23,7 @@ block content
   .contact
     .container
       .contact__wrapper
+        // contact form
         .contact-form
           .contact-form__head
             .contact-form__title Jetzt kontaktieren
@@ -30,7 +31,7 @@ block content
             .contact-form__head-icon
               +icon('ico-contact-box')
           .contact-form__content
-            form(action="#")
+            form(action="#" js-validateContactForm)
               .ui-input-dynamic
                 label Vorname und Nachname
                 input(type="text" name="name")
@@ -39,7 +40,7 @@ block content
                 input(type="email" name="email")
               .ui-input-dynamic
                 label Schreiben Sie Ihren Anliegen
-                textarea(name="text" rows="6" data-min-rows="6").js-autoExpand   
+                textarea(name="content" rows="6" data-min-rows="6").js-autoExpand
               .contact-form__cta
                 button(type="submit").card.card--contact.card--mailer-black
                   .card__content
@@ -48,6 +49,21 @@ block content
                       .card__desc.c-white60 Kotenlose Beratung anfordern
                     .card__content-icon
                       i.icon.icon-email-grad
+        // contact content
+        .contact-content
+          .contact-content__head Anschrift:
+          p Bergmann Infotech GmbH 
+          p HQ: Pretzscher Straße 38 <br> 04880 Dommitzsch
+          p Am Wallgraben 99 <br> 70563 Stuttgart
+          a(href="tel:(03 42 23) 4 32 11").contact-content__row
+            i.icon.icon-phone-grad
+            span Tel (03 42 23) 4 32 11
+          a(href="tel:(03 42 23) 4 32 22").contact-content__row
+            i.icon.icon-list-li
+            span Tel (03 42 23) 4 32 22
+          p Service: <a href="mailto:service@bergmann-infotech.de">service@bergmann-infotech.de</a>
+          p HRB: 2051 Leipzig
+          p Geschäftsführer: Ingmar Bergmann
 
 
 
