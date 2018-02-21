@@ -81,6 +81,24 @@
       &:hover
         color: $colorPrimary
 
+.contact-map
+  position: absolute
+  z-index: 9
+  top: 0
+  right: 0
+  size: 910px
+  transform: translate3d(8.5%,-45%,0)
+  background-image: linear-gradient(134deg, #F5FBFD 0%, #FFFFFF 100%)
+  border-radius: 50%
+  overflow: hidden
+  pointer-events: none
+  > div
+    width: 100%
+    height: 102%
+    pointer-events: all
+    clip-path: circle(50% at 50% 50%)
+    -webkit-clip-path: circle(50% at 50% 50%)
+
 +r($desktop)
   .contact-content
     padding-left: 50px
