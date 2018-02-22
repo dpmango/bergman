@@ -18,6 +18,8 @@
   min-width: 0
   min-height: 1px
   margin-bottom: 70px
+  &:last-child
+    margin-bottom: 0
   p
     font-size: 16px
     font-weight: 400
@@ -63,6 +65,31 @@
     line-height: 1
     font-weight: 700
 
+.list-readmore
+  overflow: hidden
+  margin: 1em 0
+  transition: .25s $ease
+  p
+    margin: 0
+    + p
+      margin-top: 1em
+.list-more
+  display: inline-block
+  float: right
+  text-align: right
+  cursor: pointer
+  font-weight: 700
+  font-size: 14px
+  margin-right: 20px
+  color: $colorPrimary
+  background: -webkit-linear-gradient(5deg, #3023AE -10%, #D864DD 110%)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+  transition: .25s $ease
+  &:hover
+    background: -webkit-linear-gradient(5deg, #D864DD -10%, #3023AE 110%)
+    -webkit-background-clip: text
+    -webkit-text-fill-color: transparent
 
 /* list style ul
 .list-marked

@@ -72,6 +72,7 @@ $(document).ready(function(){
     initScrollMonitor();
     initMasks();
     initSelects();
+    initReadmore();
     initTeleport();
     initLazyLoad();
 
@@ -217,6 +218,16 @@ $(document).ready(function(){
   function initSelects(){
     $('[js-selectric]').selectric({
       maxHeight: 300
+    });
+  }
+
+  function initReadmore(){
+    $('[js-readmore]').readmore({
+      speed: 305,
+      collapsedHeight: 60,
+      embedCSS: true,
+      moreLink: '<a class="list-more"><span>Mehr lesen ►</span</a>',
+      lessLink: '<a class="list-more"><span>Lese weniger ►</span</a>'
     });
   }
 
@@ -542,7 +553,9 @@ $(document).ready(function(){
 // GOOGLE MAPS
 //////////////
 
-google.maps.event.addDomListener(window, 'load', init);
+if ( $('.contact-map').length > 0 ){
+  google.maps.event.addDomListener(window, 'load', init);
+}
 
 var shadesOfGray = [
     {

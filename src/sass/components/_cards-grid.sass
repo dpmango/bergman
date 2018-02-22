@@ -118,9 +118,17 @@
   &--mailer-white
     width: 310px
     margin-top: 20px
-    background-image: linear-gradient(-134deg, #F5FBFD 0%, #FFFFFF 100%)
+    background-size: 230% 100%
+    background-image: linear-gradient(134deg, #F5FBFD 0%, #FFFFFF 50%, #3CAAC4 50%, #7CD2E6 78%, #B4EC51 100%)
+    .card__title, .card__desc
+      transition: .25s .06s $ease
     &:hover
       margin-top: 20px
+      background-position: 100% 100%
+      .card__content-icon
+        filter: brightness(0) invert(100%)
+      .card__title, .card__desc
+        color: white
 
 +r(1200)
   .grid-sizer
@@ -128,7 +136,7 @@
 
   .card
     width: calc(33% - 15px)
-    &--mailer, &--mailer-black
+    &--mailer, &--mailer-black, &--mailer-white
       width: 310px
 
 +r(900)
@@ -137,7 +145,7 @@
 
   .card
     width: calc(50% - 15px)
-    &--mailer, &--mailer-black
+    &--mailer, &--mailer-black, &--mailer-white
       width: 310px
       margin-top: 20px
       &:hover
@@ -156,14 +164,15 @@
     &:hover
       margin-top: 0
       margin-left: -7px
-    &--mailer, &--mailer-black
+    &--mailer, &--mailer-black, &--mailer-white
       width: 310px
       &:hover
         margin-top: 20px
 
+
 +r(414)
   .card
-    &--mailer, &--mailer-black
+    &--mailer, &--mailer-black, &--mailer-white
       width: 280px
       .card
         &__title
