@@ -356,6 +356,37 @@ $(document).ready(function(){
       }));
     }
 
+    $('.hero__image').each(function(i, el){
+      var elWatcher = scrollMonitor.create( $(el) );
+      var move1 = $(el).find('.move-1').get()
+      var base = $(el).find('.anim-base').find('ellipse, path, rect, circle').get();
+      elWatcher.enterViewport(throttle(function() {
+        anime({
+          targets: move1,
+          translateY: {
+            value: [-70,0],
+            duration: 600
+          },
+          translateX: {
+            value: [35,0],
+            duration: 600
+          },
+          easing: "easeInCubic"
+        });
+        anime({
+          targets: base,
+          opacity: 1,
+          duration: 500,
+          translateY: [50,0],
+          delay: 500,
+          easing: "easeInCubic"
+        });
+      }), 100)
+
+    });
+
+
+
     $('.wow').each(function(i, el){
 
       var elWatcher = scrollMonitor.create( $(el) );
