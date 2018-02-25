@@ -358,29 +358,54 @@ $(document).ready(function(){
 
     $('.hero__image').each(function(i, el){
       var elWatcher = scrollMonitor.create( $(el) );
-      var move1 = $(el).find('.move-1').get()
-      var base = $(el).find('.anim-base').find('ellipse, path, rect, circle').get();
+      // movable elements would be random
+      var move1 = $(el).find('.move-1')
+      // some lements imposible to move, than fade
+      var fade = $(el).find('.fade');
+      // base does fadeIn only
+      var base = $(el).find('.anim-base').find('ellipse, path, rect, circle, polygon').get();
+
+      //present random element
+      var randomTransformValues = {
+        x: [25, 40, 50, -50, 75, -40, -70],
+        y: [-20, 35, -35, -40, -60, -20]
+      }
+
       elWatcher.enterViewport(throttle(function() {
-        anime({
-          targets: move1,
-          translateY: {
-            value: [-70,0],
-            duration: 600
-          },
-          translateX: {
-            value: [35,0],
-            duration: 600
-          },
-          easing: "easeInCubic"
-        });
-        anime({
-          targets: base,
-          opacity: 1,
-          duration: 500,
-          translateY: [50,0],
-          delay: 500,
-          easing: "easeInCubic"
-        });
+        // set timeout to prevent flickering
+        setTimeout(function(){
+          move1.each(function(i, element){
+            var randomX = randomTransformValues.x[Math.floor(Math.random()*randomTransformValues.y.length)]
+            var randomY = randomTransformValues.y[Math.floor(Math.random()*randomTransformValues.x.length)]
+            console.log(randomX, randomY, $(element).attr('transform'))
+            anime({
+              targets: element,
+              translateY: [randomY,0],
+              translateX: [randomX,0],
+              opacity: 1,
+              duration: 500,
+              delay: 300,
+              easing: "easeInCubic"
+            });
+          })
+          anime({
+            targets: fade.get() ,
+            opacity: 1,
+            duration: 500,
+            easing: "easeInCubic"
+          });
+
+          anime({
+            targets: base,
+            opacity: 1,
+            duration: 500,
+            translateY: [50,0],
+            delay: 750,
+            easing: "easeInCubic"
+          });
+
+        }, 500);
+
       }), 100)
 
     });
