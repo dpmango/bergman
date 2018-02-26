@@ -19,12 +19,12 @@
     transform: translate3d(0,-50%,0)
     left: -35px
     padding-right: 15px
-    color: white
+    color: $fontColor
     font-size: 0px
     cursor: pointer
     opacity: 0
     pointer-events: none
-    transition: .25s $ease
+    transition: transform .25s $ease
     .ico
       font-size: 24px
     &:hover
@@ -154,6 +154,10 @@
     transform: translate3d(0,0,0)
     &.is-scrolling-top
       top: -75px
+
+  &.is-white, &.is-blue, &.is-fixed
+    .header__back
+      color: white
 
 +r($wide)
   .header

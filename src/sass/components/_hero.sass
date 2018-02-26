@@ -36,11 +36,15 @@
     z-index: 3
 
   &__title
+    position: relative
+    z-index: 2
     padding-top: 130px
     flex: 0 1 50%
     &--wide
       flex-basis: 80%
   &__image
+    position: relative
+    z-index: 2
     flex: 0 1 50%
     display: flex
     align-items: center
@@ -103,16 +107,31 @@
 +r($wide)
   .hero
     &__circle
-      size: 82vw
-      transform: translate3d(15vw,-35vw,0)
+      size: 73vw
+      transform: translate3d(10vw,-30vw,0)
 
 +r($desktop)
   .hero
+    &--portfolio
+      .hero__wrapper
+        min-height: 530px
+    &--case
+      .hero__wrapper
+        min-height: 530px
+      .hero__title
+        max-width: 550px
     &__wrapper
       flex-direction: column-reverse
       align-items: flex-start
       justify-content: flex-end
+      &--with-image
+        .hero__title
+          padding-top: 0
     &__circle
+      // size: 100vw
+      // right: auto
+      // left: 0
+      // transform: translate3d(-10vw,20vw,0)
       display: none
 
     &__title
@@ -128,7 +147,14 @@
 
 +r($tablet)
   .hero
+    &--portfolio
+      background-position: 60% top, center
+      .hero__wrapper
+        min-height: 450px
     &--case
+      .hero__wrapper
+        min-height: 450px
+        padding-bottom: 100px
       .hero__title
         padding-right: 50px
 
@@ -148,3 +174,5 @@
     &--case
       .hero__title
         margin-top: 10px
+      .hero__wrapper
+        min-height: 350px

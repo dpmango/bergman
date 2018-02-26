@@ -560,7 +560,13 @@ $(document).ready(function(){
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
     // update header class
     var newHeaderClass = $(newPageRawHTML).find('[js-headerClassToggler]').attr('class')
-    _document.find('.header').removeClass('is-white, is-blue, is-black-fixed, is-fixed-visible, is-fixed, is-hidden').addClass(newHeaderClass).addClass('is-back-visible');
+    _document.find('.header')
+      .removeClass('is-white')
+      .removeClass('is-blue')
+      .removeClass('is-black-fixed')
+      .removeClass('is-fixed-visible')
+      .removeClass('is-hidden')
+      .addClass(newHeaderClass).addClass('is-back-visible');
 
     // populate back-link
     _document.find('.header__back').attr('href', Barba.HistoryManager.prevStatus().url)

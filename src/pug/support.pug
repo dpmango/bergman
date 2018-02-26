@@ -7,11 +7,11 @@ block content
   
   // SERVICE :: HERO
   .hero.hero--black
-    .hero__circle.wow(data-animation-delay=".5s" data-animation-class="wowFadeCircle" data-animation-name="wowMove")
+    .hero__circle.wow(data-animation-delay="1s" data-animation-class="wowBlur" data-animation-name="wowBlurUp")
     .hero__waves
       include ../inline-svg/heroWaves.svg
     .container
-      .hero__wrapper
+      .hero__wrapper.hero__wrapper--with-image
         // PAGE TITLE
         .hero__title.page-title.page-title--white
           h1.page-title__main.wow <span>bit</span>.Support
