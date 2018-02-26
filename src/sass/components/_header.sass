@@ -20,11 +20,13 @@
     left: -35px
     padding-right: 15px
     color: white
-    font-size: 24px
+    font-size: 0px
     cursor: pointer
     opacity: 0
     pointer-events: none
     transition: .25s $ease
+    .ico
+      font-size: 24px
     &:hover
       transform: translate3d(-7px,-50%,0)
 
@@ -134,12 +136,12 @@
         fill: white
       .logo-letters
         fill: white
-      .b-phone
+    .b-phone
+      &::after
+        box-shadow: 0 22px 22px 0 rgba(0,0,0,0.12)
+      &__numbers
         &::after
           box-shadow: 0 22px 22px 0 rgba(0,0,0,0.12)
-        &__numbers
-          &::after
-            box-shadow: 0 22px 22px 0 rgba(0,0,0,0.12)
     .header__lang
       a
         color: rgba(white, .5)
@@ -153,11 +155,15 @@
     &.is-scrolling-top
       top: -75px
 
++r($wide)
+  .header
+    &__back
+      left: -30px
+
 +r($desktop)
   .header
     &__wrapper
       // padding-top: 40px
-
 
 +r($tablet)
   .header
@@ -169,6 +175,10 @@
       display: none
     &__phone
       margin-left: auto
+    &__back
+      left: -25px
+      .ico
+        font-size: 20px
 
 +r(440)
   .header

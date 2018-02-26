@@ -65,7 +65,7 @@ $(document).ready(function(){
     legacySupport();
 
     initHeaderScroll();
-    _window.on('scroll', throttle(initHeaderScroll, 10))
+    _window.on('scroll', throttle(initHeaderScroll, 25))
     _window.on('resize', debounce(initHeaderScroll, 200))
 
     initPopups();
@@ -127,12 +127,12 @@ $(document).ready(function(){
     var vScroll = _window.scrollTop();
     var header = $('.header').not('.header--static');
     var headerHeight = header.height();
-    var firstSection = _document.find('.page__content div:first-child()').height() - headerHeight;
-    var visibleWhen = Math.floor(_document.height() / _window.height()) >  2.5
+    var firstSection = _document.find('.page__content div:first-child()').outerHeight();
+    // var visibleWhen = Math.floor(_document.height() / _window.height()) >  2.5
+    var visibleWhen = true
 
     if ( pastScroll > vScroll ){
       header.addClass('is-scrolling-top');
-      console.log('is scrolling top')
     } else {
       header.removeClass('is-scrolling-top');
     }
@@ -163,7 +163,6 @@ $(document).ready(function(){
     $('[js-masonry]').each(function(i, masonry){
       var $masonry = $(masonry);
       var $grid;
-      console.log(i, $masonry)
 
       $grid = $masonry.masonry({
         itemSelector: '.card',
@@ -334,85 +333,85 @@ $(document).ready(function(){
   // SCROLLMONITOR - WOW LIKE
   ////////////
   function initScrollMonitor(){
-    animeHomeBg();
+    // animeHomeBg();
+    //
+    // function animeHomeBg(){
+    //   var el = $('[js-animeHomeBg]')
+    //   var elWatcher = scrollMonitor.create( el );
+    //   var path1 = el.find('.path1');
+    //
+    //   elWatcher.enterViewport(throttle(function() {
+    //     // anime({
+    //     //   targets: path1.get(0),
+    //     //   translateY: {
+    //     //     value: 0,
+    //     //     duration: 500,
+    //     //     delay: 400
+    //     //   },
+    //     //   rotate: -10,
+    //     // });
+    //   }, 100, {
+    //     'leading': true
+    //   }));
+    // }
 
-    function animeHomeBg(){
-      var el = $('[js-animeHomeBg]')
-      var elWatcher = scrollMonitor.create( el );
-      var path1 = el.find('.path1');
+    if ( _document.find('.hero__image').length > 0 ){
+      _document.find('.hero__image').each(function(i, el){
+        var elWatcher = scrollMonitor.create( $(el) );
+        // movable elements would be random
+        var move1 = $(el).find('.move-1')
+        // some lements imposible to move, than fade
+        var fade = $(el).find('.fade');
+        // base does fadeIn only
+        var base = $(el).find('.anim-base').find('ellipse, path, rect, circle, polygon').get();
 
-      elWatcher.enterViewport(throttle(function() {
-        // anime({
-        //   targets: path1.get(0),
-        //   translateY: {
-        //     value: 0,
-        //     duration: 500,
-        //     delay: 400
-        //   },
-        //   rotate: -10,
-        // });
-      }, 100, {
-        'leading': true
-      }));
-    }
+        //present random element
+        var randomTransformValues = {
+          x: [25, 40, 50, -50, 75, -40, -70],
+          y: [-20, 35, -35, -40, -60, -20]
+        }
 
-    $('.hero__image').each(function(i, el){
-      var elWatcher = scrollMonitor.create( $(el) );
-      // movable elements would be random
-      var move1 = $(el).find('.move-1')
-      // some lements imposible to move, than fade
-      var fade = $(el).find('.fade');
-      // base does fadeIn only
-      var base = $(el).find('.anim-base').find('ellipse, path, rect, circle, polygon').get();
-
-      //present random element
-      var randomTransformValues = {
-        x: [25, 40, 50, -50, 75, -40, -70],
-        y: [-20, 35, -35, -40, -60, -20]
-      }
-
-      elWatcher.enterViewport(throttle(function() {
-        // set timeout to prevent flickering
-        setTimeout(function(){
-          move1.each(function(i, element){
-            var randomX = randomTransformValues.x[Math.floor(Math.random()*randomTransformValues.y.length)]
-            var randomY = randomTransformValues.y[Math.floor(Math.random()*randomTransformValues.x.length)]
-            console.log(randomX, randomY, $(element).attr('transform'))
+        elWatcher.enterViewport(throttle(function() {
+          // set timeout to prevent flickering
+          setTimeout(function(){
+            move1.each(function(i, element){
+              var randomX = randomTransformValues.x[Math.floor(Math.random()*randomTransformValues.y.length)]
+              var randomY = randomTransformValues.y[Math.floor(Math.random()*randomTransformValues.x.length)]
+              anime({
+                targets: element,
+                translateY: [randomY,0],
+                translateX: [randomX,0],
+                opacity: 1,
+                duration: 500,
+                delay: 300,
+                easing: "easeInCubic"
+              });
+            })
             anime({
-              targets: element,
-              translateY: [randomY,0],
-              translateX: [randomX,0],
+              targets: fade.get() ,
               opacity: 1,
               duration: 500,
-              delay: 300,
               easing: "easeInCubic"
             });
-          })
-          anime({
-            targets: fade.get() ,
-            opacity: 1,
-            duration: 500,
-            easing: "easeInCubic"
-          });
 
-          anime({
-            targets: base,
-            opacity: 1,
-            duration: 500,
-            translateY: [50,0],
-            delay: 750,
-            easing: "easeInCubic"
-          });
+            anime({
+              targets: base,
+              opacity: 1,
+              duration: 500,
+              translateY: [50,0],
+              delay: 750,
+              easing: "easeInCubic"
+            });
 
-        }, 500);
+          }, 500);
 
-      }), 100)
+        }), 100)
 
-    });
+      });
+    }
 
 
-
-    $('.wow').each(function(i, el){
+    _document.find('.wow').each(function(i, el){
 
       var elWatcher = scrollMonitor.create( $(el) );
 
@@ -541,7 +540,7 @@ $(document).ready(function(){
         easing: easingSwing, // swing
         duration: 300,
         complete: function(anim) {
-          triggerBody()
+          // triggerBody()
           _this.done();
         }
       });
@@ -568,19 +567,19 @@ $(document).ready(function(){
     // generic functions call
     pageReady();
     triggerBody();
+    setTimeout(initScrollMonitor, 300)
     setTimeout(initMasonry, 300)
 
   });
 
-  function triggerBody(num){
-    $(window).scroll();
-    $(window).resize();
+  function triggerBody(){
+    // var evt = document.createEvent('Event');
+    // evt.initEvent('ready', false, false);
+    // window.dispatchEvent(evt);
+    _window.scrollTop(1)
+    _window.scroll();
+    _window.resize();
   }
-
-  _document.on('click', '[js-back]', function(){
-
-  })
-
 
   //////////
   // DEVELOPMENT HELPER
