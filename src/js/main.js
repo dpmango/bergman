@@ -363,12 +363,13 @@ $(document).ready(function(){
         // some lements imposible to move, than fade
         var fade = $(el).find('.fade');
         // base does fadeIn only
-        var base = $(el).find('.anim-base').find('ellipse, path, rect, circle, polygon').get();
+        var base = $(el).find('.anim-base').find('ellipse, path, rect, circle, polygon, polyline').get();
 
         //present random element
         var randomTransformValues = {
-          x: [25, 40, 50, -50, 75, -40, -70],
-          y: [-20, 35, -35, -40, -60, -20]
+          x: [25, 40, 50, -50, 75, -40, -70, -100],
+          y: [-20, 35, -35, -40, -60, -20, 80, -70],
+          delay: [50,100,150,200,250]
         }
 
         elWatcher.enterViewport(throttle(function() {
@@ -377,21 +378,22 @@ $(document).ready(function(){
             move1.each(function(i, element){
               var randomX = randomTransformValues.x[Math.floor(Math.random()*randomTransformValues.y.length)]
               var randomY = randomTransformValues.y[Math.floor(Math.random()*randomTransformValues.x.length)]
+              var randomDelay = randomTransformValues.delay[Math.floor(Math.random()*randomTransformValues.delay.length)]
               anime({
                 targets: element,
                 translateY: [randomY,0],
                 translateX: [randomX,0],
                 opacity: 1,
                 duration: 500,
-                delay: 300,
-                easing: "easeInCubic"
+                delay: 200 + (randomDelay * 1.5),
+                easing: easingSwing
               });
             })
             anime({
               targets: fade.get() ,
               opacity: 1,
               duration: 500,
-              easing: "easeInCubic"
+              easing: easingSwing
             });
 
             anime({
@@ -400,7 +402,7 @@ $(document).ready(function(){
               duration: 500,
               translateY: [50,0],
               delay: 750,
-              easing: "easeInCubic"
+              easing: easingSwing
             });
 
           }, 500);
