@@ -78,8 +78,10 @@ $(document).ready(function(){
 
     // parseSvg();
 
+    _window.on('resize', debounce(initMasonry, 200));
+
     // development helper
-    _window.on('resize', debounce(setBreakpoint, 200))
+    _window.on('resize', debounce(setBreakpoint, 200));
   }
 
   _window.on('load', function(){
@@ -159,18 +161,26 @@ $(document).ready(function(){
   // MASONRY
   //////////
 
-  function initMasonry(){
+  function initMasonry(shouldReload){
     $('[js-masonry]').each(function(i, masonry){
       var $masonry = $(masonry);
       var $grid;
-
-      $grid = $masonry.masonry({
+      var masonryOption = {
         itemSelector: '.card',
         columnWidth: '.grid-sizer',
         percentPosition: true,
         gutter: 15
-      });
+      }
+      $grid = $masonry.masonry(masonryOption);
 
+      if ( _window.width() < 640 ){
+        $grid.masonry('destroy')
+      } else {
+        $grid.masonry(masonryOption);
+        if ( shouldReload ){
+          $grid.masonry('reloadItems')
+        }
+      }
     })
   }
 
@@ -559,8 +569,10 @@ $(document).ready(function(){
 
   Barba.Dispatcher.on('newPageReady', function(currentStatus, oldStatus, container, newPageRawHTML) {
     // update header class
+    var header = $('.header');
+
     var newHeaderClass = $(newPageRawHTML).find('[js-headerClassToggler]').attr('class')
-    _document.find('.header')
+    header
       .removeClass('is-white')
       .removeClass('is-blue')
       .removeClass('is-black-fixed')
@@ -572,11 +584,17 @@ $(document).ready(function(){
     _document.find('.header__back').attr('href', Barba.HistoryManager.prevStatus().url)
     // console.log(Barba.HistoryManager.prevStatus().url)
 
+    // clean up header wow styles to prevent conflicts
+    header
+      .removeClass('wow')
+      .removeClass('wowFadeDown')
+      .attr('style', '')
+
     // generic functions call
     pageReady();
     triggerBody();
     setTimeout(initScrollMonitor, 300)
-    setTimeout(initMasonry, 300)
+    setTimeout(initMasonry(true), 300)
 
   });
 

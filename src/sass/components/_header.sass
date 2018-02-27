@@ -42,15 +42,16 @@
     svg
       width: 100%
       overflow: visible
-      .logo-mark
-        // transform-origin: right top
-        // center should be set as BBox with JS
-        transition: transform .35s easeInOutQuint
+    .logo-mark
+      // fill: url(#linearGradient-1)
+      // transform-origin: right top
+      // center should be set as BBox with JS
+      transition: transform .35s easeInOutQuint
     &-link
       position: relative
       display: inline-block
       &:hover
-        svg .logo-mark
+        .logo-mark
           transform: rotate(720deg)
 
   &__lang
@@ -189,3 +190,10 @@
     &__logo
       // mind right padding for flex prop
       flex: 0 0 183px
+
++r(375)
+  .header
+    &.is-back-visible
+      .header
+        &__logo
+          margin-left: 15px
