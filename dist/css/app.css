@@ -2343,6 +2343,10 @@ img[js-lazy][data-src][data-4-3] {
   margin-top: -10px;
 }
 
+.hero--short .hero__wrapper {
+  min-height: 380px;
+}
+
 .hero__wrapper {
   display: -webkit-box;
   display: -webkit-flex;
@@ -2591,6 +2595,9 @@ img[js-lazy][data-src][data-4-3] {
   }
   .hero--case .hero__wrapper {
     min-height: 350px;
+  }
+  .hero--short .hero__wrapper {
+    min-height: 340px;
   }
 }
 
