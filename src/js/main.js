@@ -12,14 +12,6 @@ $(document).ready(function(){
   var _window = $(window);
   var _document = $(document);
 
-  // detectors
-  function isRetinaDisplay() {
-    if (window.matchMedia) {
-        var mq = window.matchMedia("only screen and (min--moz-device-pixel-ratio: 1.3), only screen and (-o-min-device-pixel-ratio: 2.6/2), only screen and (-webkit-min-device-pixel-ratio: 1.3), only screen  and (min-device-pixel-ratio: 1.3), only screen and (min-resolution: 1.3dppx)");
-        return (mq && mq.matches || (window.devicePixelRatio > 1));
-    }
-  }
-
   function isMobile(){
     if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
       return true
@@ -68,20 +60,13 @@ $(document).ready(function(){
     _window.on('scroll', throttle(initHeaderScroll, 25))
     _window.on('resize', debounce(initHeaderScroll, 200))
 
-    initPopups();
     initScrollMonitor();
     initMasks();
     initSelects();
     initReadmore();
-    initTeleport();
     initLazyLoad();
 
-    // parseSvg();
-
     _window.on('resize', debounce(initMasonry, 200));
-
-    // development helper
-    _window.on('resize', debounce(setBreakpoint, 200));
   }
 
   _window.on('load', function(){
@@ -178,46 +163,12 @@ $(document).ready(function(){
       } else {
         $grid.masonry(masonryOption);
         if ( shouldReload ){
-          $grid.masonry('reloadItems')
+          setTimeout(function(){
+            $grid.masonry('reloadItems')
+          }, 150)
         }
       }
     })
-  }
-
-
-  //////////
-  // MODALS
-  //////////
-
-  function initPopups(){
-    // Magnific Popup
-    var startWindowScroll = 0;
-    // $('[js-modal-case]').magnificPopup({
-    //   type: 'inline',
-    //   fixedContentPos: true,
-    //   fixedBgPos: true,
-    //   overflowY: 'auto',
-    //   closeBtnInside: true,
-    //   preloader: false,
-    //   midClick: true,
-    //   removalDelay: 300,
-    //   mainClass: 'popup-buble',
-    //   callbacks: {
-    //     beforeOpen: function() {
-    //       startWindowScroll = _window.scrollTop();
-    //       // $('html').addClass('mfp-helper');
-    //     },
-    //     close: function() {
-    //       // $('html').removeClass('mfp-helper');
-    //       _window.scrollTop(startWindowScroll);
-    //     }
-    //   }
-    // });
-
-  }
-
-  function closeMfp(){
-    $.magnificPopup.close();
   }
 
   ////////////
@@ -276,46 +227,6 @@ $(document).ready(function(){
     $("input[type='tel']").mask("000 00000-000");
   }
 
-
-  ////////////
-  // TELEPORT PLUGIN
-  ////////////
-  function initTeleport(){
-    $('[js-teleport]').each(function (i, val) {
-      var self = $(val)
-      var objHtml = $(val).html();
-      var target = $('[data-teleport-target=' + $(val).data('teleport-to') + ']');
-      var conditionMedia = $(val).data('teleport-condition').substring(1);
-      var conditionPosition = $(val).data('teleport-condition').substring(0, 1);
-
-      if (target && objHtml && conditionPosition) {
-
-        function teleport() {
-          var condition;
-
-          if (conditionPosition === "<") {
-            condition = _window.width() < conditionMedia;
-          } else if (conditionPosition === ">") {
-            condition = _window.width() > conditionMedia;
-          }
-
-          if (condition) {
-            target.html(objHtml)
-            self.html('')
-          } else {
-            self.html(objHtml)
-            target.html("")
-          }
-        }
-
-        teleport();
-        _window.on('resize', debounce(teleport, 100));
-
-
-      }
-    })
-  }
-
   ////////////
   // SVG FUNCTIONS
   ////////////
@@ -343,27 +254,6 @@ $(document).ready(function(){
   // SCROLLMONITOR - WOW LIKE
   ////////////
   function initScrollMonitor(){
-    // animeHomeBg();
-    //
-    // function animeHomeBg(){
-    //   var el = $('[js-animeHomeBg]')
-    //   var elWatcher = scrollMonitor.create( el );
-    //   var path1 = el.find('.path1');
-    //
-    //   elWatcher.enterViewport(throttle(function() {
-    //     // anime({
-    //     //   targets: path1.get(0),
-    //     //   translateY: {
-    //     //     value: 0,
-    //     //     duration: 500,
-    //     //     delay: 400
-    //     //   },
-    //     //   rotate: -10,
-    //     // });
-    //   }, 100, {
-    //     'leading': true
-    //   }));
-    // }
 
     if ( _document.find('.hero__image').length > 0 ){
       _document.find('.hero__image').each(function(i, el){
@@ -422,7 +312,6 @@ $(document).ready(function(){
       });
     }
 
-
     _document.find('.wow').each(function(i, el){
 
       var elWatcher = scrollMonitor.create( $(el) );
@@ -448,14 +337,6 @@ $(document).ready(function(){
       }, 100, {
         'leading': true
       }));
-      // elWatcher.exitViewport(throttle(function() {
-      //   $(el).removeClass(animationClass);
-      //   $(el).css({
-      //     'animation-name': 'none',
-      //     'animation-delay': 0,
-      //     'visibility': 'hidden'
-      //   });
-      // }, 100));
     });
 
   }
@@ -481,20 +362,6 @@ $(document).ready(function(){
       }
     });
   }
-
-  // wait till image is loaded
-  // var targetImage = $newContainer.find('.one-member__photo').find('[js-lazy]');
-  // var targetImageLazyInstance = targetImage.Lazy({
-  //   chainable: false,
-  //   afterLoad: function(element) {
-  //     var img = new Image();
-  //     img.onload = function() {
-  //       whenLazyLoaded();
-  //     };
-  //     img.src = element.attr('src');
-  //   }
-  // })
-  // targetImageLazyInstance.force(targetImage);
 
   //////////
   // BARBA PJAX
@@ -607,26 +474,6 @@ $(document).ready(function(){
     _window.resize();
   }
 
-  //////////
-  // DEVELOPMENT HELPER
-  //////////
-  function setBreakpoint(){
-    var wHost = window.location.host.toLowerCase()
-    var displayCondition = wHost.indexOf("localhost") >= 0 || wHost.indexOf("surge") >= 0
-    if (displayCondition){
-      var wWidth = _window.width();
-
-      var content = "<div class='dev-bp-debug'>"+wWidth+"</div>";
-
-      $('.page').append(content);
-      setTimeout(function(){
-        $('.dev-bp-debug').fadeOut();
-      },1000);
-      setTimeout(function(){
-        $('.dev-bp-debug').remove();
-      },1500)
-    }
-  }
 
 });
 
