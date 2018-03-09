@@ -66,13 +66,16 @@ $(document).ready(function(){
     initReadmore();
     initLazyLoad();
 
+    initMasonry();
+    parseSvg();
+
     _window.on('resize', debounce(initMasonry, 200));
   }
 
-  _window.on('load', function(){
-    initMasonry();
-    parseSvg();
-  })
+  // _window.on('load', function(){
+  //   initMasonry();
+  //   parseSvg();
+  // })
 
   pageReady();
 

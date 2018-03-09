@@ -36,7 +36,7 @@
         <circle class="move-1" fill-opacity=".15" fill="#F4F4F4" cx="498.975" cy="202.287" r="74.527"/>
         <circle class="move-1" fill-opacity=".15" fill="#F4F4F4" cx="93.691" cy="283.912" r="17.035"/>
         <circle class="move-1" stroke="url(#a)" stroke-width="2" cx="349.211" cy="124.921" r="14.196"/>
-        <path class="stroke-1" stroke="url(#a)" stroke-width="2" d="M80.205 296.546l-10.967 5.82 2.095-12.326-8.872-8.73 12.26-1.799 5.484-11.214 5.483 11.214 12.262 1.799-8.873 8.73 2.095 12.326z"/>
+        <path class="move-1" stroke="url(#a)" stroke-width="2" d="M80.205 296.546l-10.967 5.82 2.095-12.326-8.872-8.73 12.26-1.799 5.484-11.214 5.483 11.214 12.262 1.799-8.873 8.73 2.095 12.326z"/>
         <g class="anim-base" transform="translate(129.18 163.25)" fill-rule="nonzero">
             <path d="M144.218 175.559h-74.85c16.039 0 16.039-26.66 16.039-26.66h42.771s0 26.66 16.04 26.66z" fill="url(#b)"/>
             <path d="M202.287 0H10.647C4.79 0 0 4.78 0 10.62v116.823h212.934V10.62c0-5.84-4.791-10.62-10.647-10.62z" fill="url(#b)"/>
