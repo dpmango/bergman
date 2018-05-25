@@ -3495,44 +3495,53 @@ img[js-lazy][data-src][data-4-3] {
   }
 }
 
+.sucess-message-bg {
+  position: fixed;
+  z-index: 998;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  -webkit-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  pointer-events: none;
+}
+
+.sucess-message {
+  position: fixed;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  max-width: 600px;
+  margin: 40px auto;
+  background: white;
+  -webkit-border-radius: 25px;
+          border-radius: 25px;
+  padding: 40px 40px;
+  font-size: 42px;
+  line-height: 1.4;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  -webkit-transform: translate3d(-50%, 100%, 0) scale(0.85);
+          transform: translate3d(-50%, 100%, 0) scale(0.85);
+  -webkit-transition: .3s ease-in-out;
+  -o-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+}
+
+.sucess-message-bg.is-showing {
+  opacity: 1;
+}
+
+.sucess-message.is-showing {
+  -webkit-transform: translate3d(-50%, -50%, 0) scale(1);
+          transform: translate3d(-50%, -50%, 0) scale(1);
+  opacity: 1;
+}
+
 /*# sourceMappingURL=app.css.map */
-
-.sucess-message-bg{
-	position: fixed;
-    z-index: 998;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,.5);
-    opacity: 0;
-    transition: .3s ease-in-out;
-    pointer-events: none;
-}
-
-.sucess-message{
-    position: fixed;
-    z-index: 999;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    max-width: 600px;
-    margin: 40px auto;
-    background: white;
-    border-radius: 25px;
-    padding: 40px 40px;
-    font-size: 42px;
-    line-height: 1.4;
-    text-align: center;
-    opacity: 0;
-    pointer-events: none;
-    transform: translate3d(-50%,100%,0) scale(.85);
-    transition: .3s ease-in-out;
-}
-.sucess-message-bg.is-showing{
-	opacity: 1;
-}
-.sucess-message.is-showing{
-    transform: translate3d(-50%,-50%,0) scale(1);
-    opacity: 1;
-}

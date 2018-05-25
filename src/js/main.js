@@ -1,10 +1,5 @@
 $(document).ready(function(){
 
-  // HANDCRAFTED FRONT-END WITH LOVE
-  // by KHMELEVSKOY & ASSOCIATES <sergey@khmelevskoy.co>
-  // by request from bofer.ru
-  // for Bergmann Infotech GmbH
-
   //////////
   // Global variables
   //////////
@@ -67,7 +62,9 @@ $(document).ready(function(){
     initLazyLoad();
 
     initMasonry();
+    setTimeout(initMasonry, 300);
     parseSvg();
+    initValidations();
 
     _window.on('resize', debounce(initMasonry, 200));
   }
@@ -460,11 +457,29 @@ $(document).ready(function(){
       .removeClass('wowFadeDown')
       .attr('style', '')
 
+    // update language
+    var curLang = window.location.href.split("/").splice(3, 1);
+    if (curLang){
+        $('.header__lang a').each(function(i,link){
+            if ( $(link).hasClass(curLang) ){
+                $(link).addClass('is-active')
+            } else {
+                $(link).removeClass('is-active')
+            }
+        })
+
+    }
+
+    var langHtml = $(newPageRawHTML).find('.header__lang').html();
+    $('.header__lang').html(langHtml)
+
     // generic functions call
     pageReady();
     triggerBody();
     setTimeout(initScrollMonitor, 300)
     setTimeout(initMasonry(true), 300)
+
+    iniMap();
 
   });
 
@@ -478,11 +493,118 @@ $(document).ready(function(){
   }
 
 
+function initValidations(){
+      ////////////////
+  // FORM VALIDATIONS
+  ////////////////
+
+  // jQuery validate plugin
+  // https://jqueryvalidation.org
+
+
+  // GENERIC FUNCTIONS
+  ////////////////////
+
+  var validateErrorPlacement = function(error, element) {
+    error.addClass('ui-input__validation');
+    error.appendTo(element.parent("div"));
+  }
+  var validateHighlight = function(element) {
+    $(element).parent('div').addClass("has-error");
+  }
+  var validateUnhighlight = function(element) {
+    $(element).parent('div').removeClass("has-error");
+  }
+  var validateSubmitHandler = function(form) {
+    $(form).addClass('loading');
+    $.ajax({
+      type: "POST",
+      url: $(form).attr('action'),
+      data: $(form).serialize(),
+      success: function(response) {
+        $(form).removeClass('loading');
+        var data = $.parseJSON(response);
+        console.log(data, data.success)
+        if (data.success) {
+	      $(form).find('input, textarea, select').val('');
+	      $('.sucess-message-bg').addClass('is-showing');
+          $('.sucess-message').text(data.message).addClass('is-showing');
+          setTimeout(function(){
+	         $('.sucess-message').removeClass('is-showing');
+	         $('.sucess-message-bg').removeClass('is-showing');
+          }, 2500);
+        } else {
+            $(form).find('[data-error]').html(data.message).show();
+        }
+      }
+    });
+  }
+
+  /////////////////////
+  // CONTACT FORM
+  ////////////////////
+  $("[js-validateContactForm]").validate({
+    errorPlacement: validateErrorPlacement,
+    highlight: validateHighlight,
+    unhighlight: validateUnhighlight,
+    submitHandler: validateSubmitHandler,
+    rules: {
+      name: "required",
+      content: "required",
+      email: {
+        required: true,
+        email: true
+      },
+    },
+    messages: {
+      name: "This field is required",
+      content: "This field is required",
+      email: {
+          required: "This field is required",
+          email: "Email is invalid"
+      },
+
+    }
+  });
+
+  /////////////////////
+  // PURPOSAL FORM
+  ////////////////////
+  $("[js-validatePurposal]").validate({
+    errorPlacement: validateErrorPlacement,
+    highlight: validateHighlight,
+    unhighlight: validateUnhighlight,
+    submitHandler: validateSubmitHandler,
+    rules: {
+      name: "required",
+      content: "required",
+      phone: "required",
+      email: {
+        required: true,
+        email: true
+      },
+      agree: "required",
+    },
+    messages: {
+      name: "This field is required",
+      content: "This field is required",
+      phone: "This field is required",
+      email: {
+          required: "This field is required",
+          email: "Email is invalid"
+      },
+	  agree: "This field is required",
+    }
+  });
+}
+
 });
 
 ///////////////
 // GOOGLE MAPS
 //////////////
+function iniMap(){
+
 
 if ( $('.contact-map').length > 0 ){
   google.maps.event.addDomListener(window, 'load', init);
@@ -680,4 +802,14 @@ function init() {
         icon: markerImage,
         title: 'Stuttgart'
     });
+}
+
+function enableSendRequest() {
+    var checkBox = document.getElementById("CheckDataPolicy");
+    if (checkBox.checked == true){
+        document.getElementById("SendRequest").disabled = false;
+    } else {
+       document.getElementById("SendRequest").disabled = true;
+    }
+}
 }
