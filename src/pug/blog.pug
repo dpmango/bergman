@@ -1,0 +1,104 @@
+---
+title: Blog
+headerClass: is-white is-black-fixed
+---
+extends shared/_layout
+block content
+  
+  // SERVICE :: HERO
+  .hero.hero--black.hero--blog
+    .hero__waves
+      include ../inline-svg/heroWaves.svg
+    .container
+      .hero__wrapper
+        // PAGE TITLE
+        .hero__title.hero__title--wide.page-title.page-title--white
+          h1.page-title__main.wow Wie kann man eine gute Webseite erstellen?
+          .blog__hero-desc.wow(data-animation-delay='.2s') Lesezeit ist circa <span class="c-blue">2 Minuten.</span> Keine Zeit jetzt zu lesen? Kein Problem! Dann share es und lies das später durch.
+          .social-links.wow(data-animation-delay=".4s")
+            a(href="#" target="_blank").social-link.social-link--linkedin
+              +icon('ico-social-linkedin')
+            a(href="#" target="_blank").social-link.social-link--xing
+              +icon('ico-social-xing')
+            a(href="#" target="_blank").social-link.social-link--facebook
+              +icon('ico-social-facebook')
+              
+              
+  // CONTACT
+  .blog
+    .container
+      // blog grid
+      .blog-grid
+        .blog-col.wow(data-animation-delay=".1s")
+          a(href="#").blog-card
+            .blog-card__image
+              img(src='img/blogCard-1.png' srcset='img/blogCard-1@2x.png 2x')
+            .blog-card__title Wie unterscheiden sich User Experience Design (UX) und User Interface Design (UI)?
+          
+        .blog-col.wow(data-animation-delay=".2s")
+          a(href="#").blog-card
+            .blog-card__image
+              img(src='img/blogCard-2.png' srcset='img/blogCard-2@2x.png 2x')
+            .blog-card__title Mobile Präsenz in den Google- Suchergebnissen bedeutet heute Existenz
+
+        .blog-col.wow(data-animation-delay=".3s")
+          a(href="#").blog-card
+            .blog-card__image
+              img(src='img/blogCard-empty.png' srcset='img/blogCard-empty@2x.png 2x')
+            .blog-card__title Ein weitere Artikel kommt demnächst.
+            
+        .blog-col.wow(data-animation-delay=".4s")
+          a(href="#").blog-card
+            .blog-card__image
+              img(src='img/blogCard-empty.png' srcset='img/blogCard-empty@2x.png 2x')
+            .blog-card__title Ein weitere Artikel kommt demnächst.
+        
+        .blog-col.wow(data-animation-delay=".1s")
+          a(href="#").blog-card
+            .blog-card__image
+              img(src='img/blogCard-1.png' srcset='img/blogCard-1@2x.png 2x')
+            .blog-card__title Wie unterscheiden sich User Experience Design (UX) und User Interface Design (UI)?
+          
+        .blog-col.wow(data-animation-delay=".2s")
+          a(href="#").blog-card
+            .blog-card__image
+              img(src='img/blogCard-2.png' srcset='img/blogCard-2@2x.png 2x')
+            .blog-card__title Mobile Präsenz in den Google- Suchergebnissen bedeutet heute Existenz
+
+        .blog-col.wow(data-animation-delay=".3s")
+          a(href="#").blog-card
+            .blog-card__image
+              img(src='img/blogCard-empty.png' srcset='img/blogCard-empty@2x.png 2x')
+            .blog-card__title Ein weitere Artikel kommt demnächst.
+            
+        .blog-col.wow(data-animation-delay=".4s")
+          a(href="#").blog-card
+            .blog-card__image
+              img(src='img/blogCard-empty.png' srcset='img/blogCard-empty@2x.png 2x')
+            .blog-card__title Ein weitere Artikel kommt demnächst.
+        
+        .blog-col.wow(data-animation-delay=".1s")
+          a(href="#").blog-card
+            .blog-card__image
+              img(src='img/blogCard-1.png' srcset='img/blogCard-1@2x.png 2x')
+            .blog-card__title Wie unterscheiden sich User Experience Design (UX) und User Interface Design (UI)?
+          
+        .blog-col.wow(data-animation-delay=".2s")
+          a(href="#").blog-card
+            .blog-card__image
+              img(src='img/blogCard-2.png' srcset='img/blogCard-2@2x.png 2x')
+            .blog-card__title Mobile Präsenz in den Google- Suchergebnissen bedeutet heute Existenz
+
+        .blog-col.wow(data-animation-delay=".3s")
+          a(href="#").blog-card
+            .blog-card__image
+              img(src='img/blogCard-empty.png' srcset='img/blogCard-empty@2x.png 2x')
+            .blog-card__title Ein weitere Artikel kommt demnächst.
+            
+        .blog-col.wow(data-animation-delay=".4s")
+          a(href="#").blog-card
+            .blog-card__image
+              img(src='img/blogCard-empty.png' srcset='img/blogCard-empty@2x.png 2x')
+            .blog-card__title Ein weitere Artikel kommt demnächst.
+                                                    
+  include components/_services-bottom

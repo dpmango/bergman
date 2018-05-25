@@ -53,6 +53,29 @@
         &-arrow
           transform-origin: right center
           transition: .25s $ease
+      &--grad
+        position: relative
+        padding: 0
+        size: 55px
+        border-radius: 50%
+        display: flex
+        align-items: center
+        justify-content: center
+        box-shadow: 0 22px 22px 0 rgba(0,0,0,0.12)
+        &::after
+          display: inline-block
+          content: ' '
+          position: absolute 0
+          z-index: 1
+          border-radius: 50%
+          background-image: linear-gradient(-134deg, #3023AE 0%, #C86DD7 100%)
+          transition: .25s $ease
+        .icon
+          position: relative
+          z-index: 2
+          filter: brightness(0) invert(100%)
+          transform: scale(.75) translateY(2px)
+          transform-origin: center center
     &--fixed
       position: absolute
       bottom: 0
@@ -130,6 +153,30 @@
       .card__title, .card__desc
         color: white
 
+  &--transparent
+    width: 280px
+    margin-top: 40px
+    background: transparent
+    box-shadow: none
+    border-radius: 0
+    .card
+      &__content
+        padding: 0
+        align-items: center
+      &__title
+        font-size: 20px
+    .card__title, .card__desc
+      transition: .25s .06s $ease
+    &:hover
+      box-shadow: none
+      margin-top: 40px
+      .card__content-icon
+        &::after
+          transform: rotate(180deg)
+        // filter: brightness(0) invert(100%)
+      .card__title, .card__desc
+        color: white
+
 +r(1200)
   .grid-sizer
     width: calc(33% - 15px)
@@ -179,6 +226,12 @@
   .card
     &--mailer, &--mailer-black, &--mailer-white
       width: 280px
+      .card
+        &__title
+          font-size: 18px
+        &__desc
+          font-size: 13px
+    &--transparent
       .card
         &__title
           font-size: 18px

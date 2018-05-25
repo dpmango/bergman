@@ -1,0 +1,34 @@
+---
+title: Blog inner
+headerClass: is-white is-black-fixed
+---
+extends shared/_layout
+block content
+  
+  // SERVICE :: HERO
+  .hero.hero--black.hero--blog
+    .hero__waves
+      include ../inline-svg/heroWaves.svg
+    .container
+      .hero__wrapper
+        // PAGE TITLE
+        .hero__title.hero__title--wide.page-title.page-title--white
+          h1.page-title__main.wow Wie kann man eine gute Webseite erstellen?
+          .blog__hero-desc.wow(data-animation-delay='.2s') Lesezeit ist circa <span class="c-blue">2 Minuten.</span> Keine Zeit jetzt zu lesen? Kein Problem! Dann share es und lies das später durch.
+          .social-links.wow(data-animation-delay=".4s")
+            a(href="#" target="_blank").social-link.social-link--linkedin
+              +icon('ico-social-linkedin')
+            a(href="#" target="_blank").social-link.social-link--xing
+              +icon('ico-social-xing')
+            a(href="#" target="_blank").social-link.social-link--facebook
+              +icon('ico-social-facebook')
+              
+              
+  // CONTACT
+  .blog-content
+    .container
+      
+      
+  include components/_services-blog
+  
+  include components/_services-bottom
