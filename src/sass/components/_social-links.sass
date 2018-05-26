@@ -2,6 +2,8 @@
   display: flex
   align-items: center
   margin-top: 35px
+  +r($mobile)
+    margin-top: 25px
 
 .social-link
   position: relative
@@ -15,6 +17,11 @@
   font-size: 0
   margin-right: 10px
   box-shadow: 0 22px 22px 0 rgba(0,0,0,0.12)
+  +r($mobile)
+    flex-basis: 45px
+    size: 45px
+    .ico
+      font-size: 17px
   .ico
     position: relative
     z-index: 2
@@ -26,7 +33,9 @@
     z-index: 1
     border-radius: 50%
     transition: .25s $ease
-
+  &--insta
+    &::after
+      background-image: linear-gradient(-134deg, #3023AE 0%, #C86DD7 100%)
   &--linkedin
     &::after
       background-image: linear-gradient(134deg, #027BB5 0%, #027BB5 100%)
@@ -36,7 +45,9 @@
   &--facebook
     &::after
       background-image: linear-gradient(134deg, #004DBD 0%, #067BCE 100%)
-
+  &--facebook-messenger
+    &::after
+      background-image: linear-gradient(-134deg, #0B69F1 0%, #0095FF 100%)
   &:hover
     &::after
       transform: rotate(180deg)

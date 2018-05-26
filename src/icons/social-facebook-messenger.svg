@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>social-facebook-messenger</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="bit.Design" transform="translate(-223.000000, -2665.000000)" fill="#FFFFFF" fill-rule="nonzero">
+            <g id="Group-13-Copy-2" transform="translate(208.000000, 2650.000000)">
+                <g id="facebook-messenger" transform="translate(15.000000, 15.000000)">
+                    <path d="M13,0 C5.82028571,0 0,5.38914198 0,12.037037 C0,15.8250926 1.89040994,19.2039691 4.8447205,21.4104383 L4.8447205,26 L9.27109938,23.5706852 C10.4524037,23.8976111 11.7038758,24.0740741 13,24.0740741 C20.1797143,24.0740741 26,18.6849321 26,12.037037 C26,5.38914198 20.1797143,0 13,0 Z M14.2919255,16.2098765 L10.9813665,12.6790123 L4.52173913,16.2098765 L11.6273292,8.66666667 L15.0186335,12.1975309 L21.3975155,8.66666667 L14.2919255,16.2098765 Z" id="social-facebook-messenger"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

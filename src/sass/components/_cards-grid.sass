@@ -154,7 +154,7 @@
         color: white
 
   &--transparent
-    width: 280px
+    width: 280px !important
     margin-top: 40px
     background: transparent
     box-shadow: none
@@ -167,6 +167,7 @@
         font-size: 20px
     .card__title, .card__desc
       transition: .25s .06s $ease
+
     &:hover
       box-shadow: none
       margin-top: 40px
@@ -176,7 +177,17 @@
         // filter: brightness(0) invert(100%)
       .card__title, .card__desc
         color: white
-
+    &-black
+      overflow: visible
+      .card__content-icon
+        transition: .25s $ease
+      .card__title, .card__desc
+        color: #29292B
+      &:hover
+        .card__content-icon
+          transform: translateX(-5px)
+        .card__title, .card__desc
+          color: $colorGray
 +r(1200)
   .grid-sizer
     width: calc(33% - 15px)
@@ -200,6 +211,10 @@
       .card
         &__content
           padding: 30px 20px 20px 20px
+    &--transparent
+      margin-top: 40px
+      &:hover
+        margin-top: 40px
 
 +r($tablet)
   .cards-grid
@@ -220,7 +235,11 @@
       width: 310px
       &:hover
         margin-top: 20px
-
+    &--transparent
+      margin-top: 40px
+      &:hover
+        margin-top: 40px
+        margin-left: 0
 
 +r(414)
   .card
@@ -232,6 +251,7 @@
         &__desc
           font-size: 13px
     &--transparent
+      width: 250px !important
       .card
         &__title
           font-size: 18px
