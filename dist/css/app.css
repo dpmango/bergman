@@ -6,7 +6,7 @@
  * 2. Prevent adjustments of font size after orientation changes in
  *    IE on Windows Phone and in iOS.
  */
-@import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,500,900|Roboto:400,500,700,900");
+@import url("https://fonts.googleapis.com/css?family=Montserrat+Alternates:400,500,700,900|Roboto:400,500,700,900");
 html {
   line-height: 1.15;
   /* 1 */
@@ -2952,13 +2952,13 @@ img[js-lazy][data-src][data-4-3] {
 }
 
 /* list style ul */
-.list-marked {
+.list-marked, ul {
   list-style: none;
   padding: 1em 0;
   margin: auto 0;
 }
 
-.list-marked li {
+.list-marked li, ul li {
   position: relative;
   padding-left: 35px;
   font-family: "Montserrat Alternates", sans-serif;
@@ -2969,17 +2969,17 @@ img[js-lazy][data-src][data-4-3] {
   display: block;
 }
 
-.list-marked li:last-child {
+.list-marked li:last-child, ul li:last-child {
   margin-bottom: 0;
 }
 
 @media only screen and (max-width: 768px) {
-  .list-marked li:last-child {
+  .list-marked li:last-child, ul li:last-child {
     margin-bottom: 15px;
   }
 }
 
-.list-marked li:before {
+.list-marked li:before, ul li:before {
   display: inline-block;
   content: ' ';
   position: absolute;
@@ -3003,14 +3003,14 @@ img[js-lazy][data-src][data-4-3] {
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min--moz-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2 / 1), only screen and (min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
-  .list-marked li:before {
+  .list-marked li:before, ul li:before {
     -webkit-background-size: 90px 66px;
             background-size: 90px 66px;
     background-image: url("../img/sprite@2x.png");
   }
 }
 
-.list-marked li:hover:before {
+.list-marked li:hover:before, ul li:hover:before {
   -webkit-transform: translateY(-50%) translateX(-5px);
       -ms-transform: translateY(-50%) translateX(-5px);
           transform: translateY(-50%) translateX(-5px);
@@ -3740,6 +3740,21 @@ img[js-lazy][data-src][data-4-3] {
   margin-bottom: 75px;
 }
 
+@media only screen and (max-width: 1200px) {
+  .services-blog .blog-col:nth-child(4) {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .services-blog .blog-col:nth-child(4) {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
 .blog {
   position: relative;
   z-index: 2;
@@ -3870,6 +3885,119 @@ img[js-lazy][data-src][data-4-3] {
 .blog-card:hover .blog-card__image {
   -webkit-box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 30px 20px rgba(0, 0, 0, 0.1);
+}
+
+.blog-content {
+  margin-top: 120px;
+  /* pretty much list marked copy */
+}
+
+.blog-content + .services-blog {
+  margin-top: 0;
+}
+
+.blog-content__section {
+  margin: 100px 0;
+}
+
+.blog-content__wrapper {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: -30px;
+  margin-right: -30px;
+}
+
+.blog-content__wrapper .blog-content__col:first-child {
+  -webkit-flex-basis: 41%;
+      -ms-flex-preferred-size: 41%;
+          flex-basis: 41%;
+  max-width: 41%;
+}
+
+.blog-content__wrapper .blog-content__col:last-child {
+  -webkit-flex-basis: 59%;
+      -ms-flex-preferred-size: 59%;
+          flex-basis: 59%;
+  max-width: 59%;
+}
+
+.blog-content__wrapper--hero .blog-content__col:first-child {
+  -webkit-flex-basis: 35%;
+      -ms-flex-preferred-size: 35%;
+          flex-basis: 35%;
+  max-width: 35%;
+  text-align: center;
+}
+
+.blog-content__wrapper--hero .blog-content__col:last-child {
+  -webkit-flex-basis: 65%;
+      -ms-flex-preferred-size: 65%;
+          flex-basis: 65%;
+  max-width: 65%;
+}
+
+.blog-content__wrapper--reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -webkit-flex-direction: row-reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+.blog-content__col {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  padding: 30px 30px;
+  min-width: 1px;
+  min-height: 0px;
+}
+
+.blog-content h2 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 900;
+  font-size: 40px;
+  line-height: 1.2;
+  margin: 0 0 2em;
+  max-width: 700px;
+}
+
+.blog-content h3 {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-weight: 900;
+  font-size: 22px;
+  line-height: 2;
+  margin: 1em 0 2em;
+}
+
+.blog-content h3 + p {
+  margin-top: 0;
+}
+
+.blog-content p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.625;
+}
+
+.blog-content p + img {
+  margin: 60px 0 1em;
+}
+
+.blog-content img {
+  max-width: 100%;
+  -webkit-border-radius: 12px;
+          border-radius: 12px;
+  position: relative;
+}
+
+.blog-content ul li {
+  font-family: "Montserrat Alternates", sans-serif;
+  font-size: 18px;
+  font-weight: 700;
 }
 
 .social-links {
