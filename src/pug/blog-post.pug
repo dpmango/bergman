@@ -91,7 +91,28 @@ block content
             p Das Schnittstellendesign ist die wichtigste Phase der Webseitenerstellung. 
             p Die folgende Checkliste fasst die 7 Grundprinzipien der erfolgreichen UI/UX Webseitengestaltung zusammen. 
             img(src='img/blogSectionHero-6.png')
-            
+      
+  .blog-cta
+    .container
+      .blog-content__wrapper.blog-content__wrapper--reverse.blog-content__wrapper--hide-image-mobile
+        .blog-content__col
+          include ../inline-svg/blog-cta.svg
+        .blog-content__col
+          .blog-cta__name.wow(data-animation-delay=".2s") Die positiven Erlebnisse sind das wichtigste Teil einer nachhaltigen Interaktion auf der Webseite.
+          .blog-cta__desc.wow(data-animation-delay=".3s") 
+            p Möchten Sie eine Webseite erstellen, die Besucher zu Kunden macht?
+            p Sprechen Sie um uns an!
+
+          //card contact
+          a(href="mailto:support@bergmann-infotech.de" data-animation-delay=".4s").card.card--contact.card--mailer.wow
+            .card__content
+              .card__content-wrap
+                .card__title Anfrage schicken
+                .card__desc.c-white60 Kotenlose Beratung anfordern
+              .card__content-icon
+                i.icon.icon-email-grad
+
+      
   include components/_services-blog
   
   include components/_services-bottom

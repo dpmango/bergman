@@ -134,6 +134,8 @@
     padding: 30px 30px
     min-width: 1px
     min-height: 0px
+    img, svg
+      max-width: 100%
   h2
     font-family: $monster
     font-weight: 900
@@ -158,7 +160,7 @@
     & + img
       margin: 60px 0 1em
 
-  img
+  img, svg
     max-width: 100%
     border-radius: 12px
     position: relative
@@ -194,7 +196,7 @@
     &__wrapper
       flex-direction: column
       &--hide-image-mobile
-        img
+        img, svg
           display: none
     &__col
       flex: 0 0 auto !important
@@ -217,3 +219,30 @@
       font-size: 18px
     p
       font-size: 15px
+
+.blog-cta
+  margin: 0px 0 50px
+  &__name
+    font-family: $monster
+    font-weight: 900
+    font-size: 40px
+    line-height: 1.1
+    +r($wide)
+      font-size: 35px
+    +r($desktop)
+      font-size: 32px
+    +r($tablet)
+      font-size: 30px
+    +r($mobile)
+      font-size: 26px
+
+  &__desc
+    margin-top: 20px
+    max-width: 500px
+    font-size: 16px
+    // color: $colorGray
+    line-height: 1.56
+    // +r($tablet)
+
+    +r($mobile)
+      font-size: 14px
