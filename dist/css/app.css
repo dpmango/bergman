@@ -4126,6 +4126,9 @@ img[js-lazy][data-src][data-4-3] {
         -ms-flex-direction: column;
             flex-direction: column;
   }
+  .blog-content__wrapper--hide-image-mobile img {
+    display: none;
+  }
   .blog-content__col {
     -webkit-box-flex: 0 !important;
     -webkit-flex: 0 0 auto !important;
