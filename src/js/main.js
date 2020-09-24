@@ -156,18 +156,21 @@ $(document).ready(function(){
         percentPosition: true,
         gutter: 15
       }
-      $grid = $masonry.masonry(masonryOption);
 
-      if ( _window.width() < 640 ){
-        $grid.masonry('destroy')
-      } else {
-        $grid.masonry(masonryOption);
-        if ( shouldReload ){
-          setTimeout(function(){
-            $grid.masonry('reloadItems')
-          }, 150)
+      $masonry.imagesLoaded( function() {
+        $grid = $masonry.masonry(masonryOption);
+
+        if ( _window.width() < 640 ){
+          $grid.masonry('destroy')
+        } else {
+          $grid.masonry(masonryOption);
+          if ( shouldReload ){
+            setTimeout(function(){
+              $grid.masonry('reloadItems')
+            }, 150)
+          }
         }
-      }
+      });
     })
   }
 
